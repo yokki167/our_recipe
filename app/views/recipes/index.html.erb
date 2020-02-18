@@ -1,7 +1,10 @@
 <% @recipes.each do |recipe| %>
   <div class="content">
     <div class="content__left">
-      <div class="content__left--image"></div>
+      <div class="content__left--image">
+        <td><%= image_tag recipe.image.to_s %></td>
+
+      </div>
     </div>
     <div class="content__right">
       <div class="content__right__top">

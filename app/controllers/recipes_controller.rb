@@ -1,10 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:user)
   end
 
   def new
-    @recipe = Recipe.includes(:user)
+    @recipe = Recipe.new
   end
 
   def create
@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :time).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:title, :time, :image).merge(user_id: current_user.id)
   end
 
 

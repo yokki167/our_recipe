@@ -4,5 +4,7 @@
 <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
   <%= form.text_area :time, placeholder: :作業時間, class: :form__text %>
+  <%= form.file_field :image %>
+
   <%= form.submit '投稿する', class: :form__btn %>
 <% end %>
