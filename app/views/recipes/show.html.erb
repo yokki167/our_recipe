@@ -1,0 +1,19 @@
+<div class="postTitle">
+  <%= @recipe.title %>
+</div>
+<div class="postDate">
+  <%= @recipe.created_at %>
+</div>
+<div class="postAuthor">
+</div>
+<% if user_signed_in? && current_user.id == @recipe.user_id %>
+  <div class="postManage">
+    <%= link_to "編集", edit_recipe_path(@recipe.id), class: "postManage__edit" %>
+    <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "postManage__delete" %>
+  </div>
+<% end %>
+
+
+<div class="postText">
+  <%= @recipe.time %>
+</div>
