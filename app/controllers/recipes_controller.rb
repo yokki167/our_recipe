@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @like = Like.new
   end
 
   def edit
