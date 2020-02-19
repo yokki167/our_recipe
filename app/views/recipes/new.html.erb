@@ -8,5 +8,16 @@
   <%= form.text_field :time, placeholder: :食べるまでの時間, class: :form__text %>
   <%= form.file_field :image %>
 
+  <%= form.fields_for :recipelists do |f| %>
+    <%= f.text_field :text, placeholder: :作り方, class: :form__text %>
+    <%= f.file_field :image %>
+    <% end%>
+
+  <%= form.fields_for :recipelists do |f| %>
+    <%= f.text_field :text, placeholder: :作り方, class: :form__text %>
+    <%= f.file_field :image %>
+    <% end%>
+
+
   <%= form.submit '投稿する', class: :form__btn %>
 <% end %>
