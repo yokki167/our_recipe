@@ -5,6 +5,7 @@
 
 <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+  <%= form.text_field :serving, placeholder: :人前, class: :form__serving %>
   <%= form.text_field :time, placeholder: :食べるまでの時間, class: :form__text %>
   <%= form.file_field :image %>
 
@@ -13,9 +14,9 @@
     <%= f.file_field :image %>
     <% end%>
 
-  <%= form.fields_for :recipelists do |f| %>
-    <%= f.text_field :text, placeholder: :作り方, class: :form__text %>
-    <%= f.file_field :image %>
+  <%= form.fields_for :ingredients do |f| %>
+    <%= f.text_field :iname, placeholder: :材料, class: :form__text %>
+    <%= f.text_field :amount, placeholder: :量, class: :form__text %>
     <% end%>
 
 

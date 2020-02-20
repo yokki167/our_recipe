@@ -3,6 +3,7 @@
 </div>
 <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+  <%= form.text_field :serving, placeholder: :人前, class: :form__serving %>
   <%= form.text_area :time, placeholder: :作業時間, class: :form__text %>
   <%= form.file_field :image %>
 

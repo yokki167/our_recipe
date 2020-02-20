@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 2020_02_19_061143) do
   create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "iname"
     t.string "amount"
-    t.integer "serving"
     t.bigint "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_061143) do
     t.string "title"
     t.string "image"
     t.integer "time"
+    t.integer "serving"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
