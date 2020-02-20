@@ -14,9 +14,9 @@
     <%= f.file_field :image %>
     <% end%>
 
-  <%= form.fields_for :ingredients do |f| %>
-    <%= f.text_field :iname, placeholder: :材料, class: :form__text %>
-    <%= f.text_field :amount, placeholder: :量, class: :form__text %>
+  <%= form.fields_for :ingredients do |d| %>
+    <%= d.text_field :iname, placeholder: :材料, class: :form__text %>
+    <%= d.text_field :amount, placeholder: :量, class: :form__text %>
     <% end%>
 
 
