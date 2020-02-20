@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipelists = 3.times { @recipe.recipelists.build }
-    @ingredients = 3.times { @recipe.ingredients.build }
+    @ingredients = 5.times { @recipe.ingredients.build }
 
   end
 
