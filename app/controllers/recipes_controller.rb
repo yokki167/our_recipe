@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+
+  # before_action :set_ing only: :show
+
   def index
     @recipes = Recipe.includes(:user)
   end
@@ -6,7 +9,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipelists = 3.times { @recipe.recipelists.build }
-    @ingredients = 5.times { @recipe.ingredients.build }
+    @ingredients = 3.times { @recipe.ingredients.build }
     # @recipelists.ingredients.build
 
   end
@@ -20,6 +23,8 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @like = Like.new
+    a = @recipe.ingredients
+
   end
 
   def edit
@@ -47,6 +52,10 @@ class RecipesController < ApplicationController
          ingredients_attributes:[:iname, :amount, :recipe_id])
          .merge(user_id: current_user.id)
   end
+
+  # def set_ing
+  #   @a = Recipe.find(params[:recipe_id])
+  # end
 
 
 end

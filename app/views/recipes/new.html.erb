@@ -1,12 +1,12 @@
 <div class="content__title">
-  新規記事の作成
+  レシピの入力
 </div>
 
 
 <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
   <%= form.text_field :serving, placeholder: :人前, class: :form__serving %>
-  <%= form.text_field :time, placeholder: :食べるまでの時間, class: :form__text %>
+  <%= form.text_field :time, placeholder: :食べるまでの時間, class: :form__time %>
   <%= form.file_field :image %>
 
   <%= form.fields_for :recipelists do |f| %>

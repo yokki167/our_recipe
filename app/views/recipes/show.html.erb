@@ -31,3 +31,17 @@
 <div class="postText">
   <%= @recipe.time %>
 </div>
+
+<div class="recipelist">
+  <div class="zairyou">材料:<%= @recipe.serving %> 人前</div>
+  <% @recipe.ingredients.each do |ingr| %>
+
+  <div class="ingr">
+  <div class="iname"><%= ingr.iname %></div>
+  <div class="amount"><%= ingr.amount %></div>
+  </div>
+  <% end %> 
+
+
+
+</div>

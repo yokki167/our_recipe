@@ -4,8 +4,19 @@
 <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
   <%= form.text_field :serving, placeholder: :人前, class: :form__serving %>
-  <%= form.text_area :time, placeholder: :作業時間, class: :form__text %>
+  <%= form.text_area :time, placeholder: :作業時間, class: :form__time %>
   <%= form.file_field :image %>
+
+  <%= form.fields_for :recipelists do |f| %>
+    <%= f.text_field :text, placeholder: :作り方, class: :form__text %>
+    <%= f.file_field :image %>
+    <% end%>
+
+  <%= form.fields_for :ingredients do |d| %>
+    <%= d.text_field :iname, placeholder: :材料, class: :form__text %>
+    <%= d.text_field :amount, placeholder: :量, class: :form__text %>
+    <% end%>
+
 
   <%= form.submit '投稿する', class: :form__btn %>
 <% end %>
