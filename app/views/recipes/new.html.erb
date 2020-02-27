@@ -3,24 +3,32 @@
 </div>
 
 
-<%= form_with model: @recipe, class: :form, local: true do |form| %>
 
+<%= form_with model: @recipe, class: :form, local: true do |form| %>
 
   <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
   <%= form.text_field :serving, placeholder: :人前, class: :form__serving %>
   <%= form.text_field :time, placeholder: :食べるまでの時間, class: :form__time %>
   <%= form.file_field :image %>
 
-  <%= form.fields_for :recipelists do |f| %>
-    <%= f.text_field :text, placeholder: :作り方, class: :form__text %>
-    <%= f.file_field :image %>
+
+
+    <%= form.fields_for :recipelists do |recipelist| %>
+      <%= render "recipelist_fields", f: recipelist %>
     <% end%>
+    <div class="links">
+      <%= link_to_add_association "add recipelist", form, :recipelists %>
+    </div>
 
-  <%= form.fields_for :ingredients do |d| %>
-    <%= d.text_field :iname, placeholder: :材料, class: :form__text %>
-    <%= d.text_field :amount, placeholder: :量, class: :form__text %>
+    
+
+    <%= form.fields_for :ingredients do |ingredient| %>
+      <%= render "ingredient_fields", f: ingredient %>
     <% end%>
-
-
-  <%= form.submit '投稿する', class: :form__btn %>
+    <div class="links">
+      <%= link_to_add_association "add ingredient", form, :ingredients %>
+    </div>
+  
+      <%= form.submit 'Save' %>
+  
 <% end %>
