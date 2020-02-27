@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   def create
+    # binding.pry
     @like = current_user.likes.create(recipe_id: params[:recipe_id])
     redirect_back(fallback_location: root_path)
   end

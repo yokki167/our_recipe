@@ -7,6 +7,9 @@ class Recipe < ApplicationRecord
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
 
+  has_many :calculations
+  has_many :calculations_users, through: :calculations, source: :user
+
   accepts_nested_attributes_for :recipelists
   accepts_nested_attributes_for :ingredients
 

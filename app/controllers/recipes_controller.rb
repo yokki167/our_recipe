@@ -24,6 +24,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @like = Like.new
     a = @recipe.ingredients
+    # @calculation = @recipe.calculations.new(calculation_params)
+
 
   end
 
@@ -48,10 +50,15 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(
         :title , :time, :image, :serving,
-         recipelists_attributes: [:text, :image, :recipe_id],
-         ingredients_attributes:[:iname, :amount, :recipe_id])
+         recipelists_attributes: [:id, :text, :image, :recipe_id],
+         ingredients_attributes:[:id, :iname, :amount, :recipe_id])
          .merge(user_id: current_user.id)
   end
+
+  # def calculation_params
+  #   params.require(:calculation).permit(:calc).merge(user_id: current_user.id)
+  # end
+
 
   # def set_ing
   #   @a = Recipe.find(params[:recipe_id])

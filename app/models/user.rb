@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :likes,dependent: :destroy
   has_many :liked_recipes, through: :likes, source: :recipe
 
+  has_many :calculations
+  has_many :calculations_recipes, through: :calculations, source: :recipe
+
   def already_liked?(recipe)
     self.likes.exists?(recipe_id: recipe.id)
   end
