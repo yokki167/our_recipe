@@ -8,8 +8,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipelists = 3.times { @recipe.recipelists.build }
-    @ingredients = 3.times { @recipe.ingredients.build }
+    @recipelists = @recipe.recipelists.build 
+    @ingredients = @recipe.ingredients.build 
     # @recipelists.ingredients.build
 
   end
@@ -50,8 +50,8 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(
         :title , :time, :image, :serving,
-         recipelists_attributes: [:id, :text, :image, :recipe_id],
-         ingredients_attributes:[:id, :iname, :amount, :recipe_id])
+         recipelists_attributes: [:id, :text, :image, :recipe_id, :_destroy],
+         ingredients_attributes:[:id, :iname, :amount, :recipe_id, :_destroy])
          .merge(user_id: current_user.id)
   end
 
