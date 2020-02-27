@@ -64,4 +64,5 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'nested_form_fields'
 gem 'pry-rails'
