@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
 
   # before_action :set_ing only: :show
+  before_action :movie_to_index, except: [:index, :show]
 
   def index
-    @recipes = Recipe.includes(:user)
+    @recipes = Recipe.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -40,6 +41,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    # binding.pry
     recipe = Recipe.find(params[:id])
     recipe.destroy
     redirect_to root_path
@@ -63,6 +65,11 @@ class RecipesController < ApplicationController
   # def set_ing
   #   @a = Recipe.find(params[:recipe_id])
   # end
+
+  def movie_to_index
+    redirect_to action: :index  unless user_signed_in?
+  end
+
 
 
 end
