@@ -1,14 +1,17 @@
 body{
-  background-color: #f6f6f6;
+  background-color:white;
   min-width: 650px;
+
   .header{
     height: 56px;
     width: 100%;
     padding: 0 150px;
-    background-color: #55c500;
+    background-color: #5e4a4a;
     color: #fff;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
     &__title{
       font-size: 30px;
       line-height: 56px;
@@ -27,110 +30,15 @@ body{
     }
   }
   .contents{
-    margin: 30px auto 0;
-    background-color: #fff;
-    height: 800px;
-    width: 70%;
+    // margin: 30px auto 0;
+    padding-top: 86px;
+    background-color: #fbf0f0;
+    height: 100%;
+    width: 100%;
     overflow: scroll;
-    .content{
-      padding: 10px;
-      border-bottom: 1px solid #f6f6f6;
-      display: flex;
-      &__left{
-        padding-right: 20px;
-        &--image{
-          height: 55px;
-          width: 55px;
-          border: solid 1px;
-        }
-      }
-      &__right{
-        width: calc(100%-100px);
-        &__top{
-          font-size: 20px;
-          font-weight: bold;
-          &--title{
-            text-decoration: none;
-            color: #000000;
-          }
-        }
-        &__bottom{
-          font-size: 15px;
-          color: #999;
-          display: flex;
-          &--userName{
-            &--btn{
-              text-decoration: none;
-              color: #999;
-            }
-          }
-          &--date{
-            margin-left: 20px;
-          }
-        }
-      }
-      &__title{
-        font-size: 30px;
-        font-weight: bold;
-        padding-top: 30px;
-        text-align: center;
-      }
-    }
-    .postTitle{
-      padding-top: 20px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .postDate{
-      font-size: 15px;
-      color: #999;
-      text-align: center;
-    }
-    .postAuthor{
-      font-size: 15px;
-      color: #999;
-      text-align: center;
-    }
-    .postManage{
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      &__edit{
-        display: block;
-        border-radius: 5px;
-        color: #ffffff;
-        background-color:#55c500;
-        padding: 0 10px;
-        text-decoration: none;
-        margin-right: 10px;
-      }
-      &__delete{
-        display: block;
-        border-radius: 5px;
-        color: #ffffff;
-        background-color:#55c500;
-        padding: 0 10px;
-        text-decoration: none;
-        margin-left: 10px;
-      }
-    }
-    .postText{
-      margin: 20px 30px;
-    }
-
-    .recipelist{
-      height: 200px;
-      width: 40%;
-      .zairyou{
-        font-size: 25px;
-      }
-      .ingr{
-        display: flex;
-        justify-content: space-between;
-      }
-      
-    }
+  
+    
+    
   }
   .form{
     width: 85%;
