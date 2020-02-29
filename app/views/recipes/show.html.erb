@@ -2,115 +2,110 @@
   <div class="top--wrapper">
     <div class="top--wrapper__left">
       <div class="top--wrapper__left__recipename">
+         <%= @recipe.title %>
       </div>
+      <div class="postAuthor">
+        by:<%= link_to @recipe.user.nickname, user_path(@recipe.user), class: "nickname-deco" %>
+      </div>
+
       <div class="top--wrapper__left__oneword">
+        美味しい
       </div>
       <div class="top--wrapper__left__likewrapper">
         <div class="top--wrapper__left__likewrapper__count">
+          いいね数 : <%= @recipe.likes.count %>
         </div>
         <div class="top--wrapper__left__likewrapper__btn">
+          <% if user_signed_in? %>
+            <% if current_user.already_liked?(@recipe) %>
+              <%= button_to 'いいねを取り消す', recipe_like_path(@recipe), method: :delete %>
+            <% else %>
+              <%= button_to 'いいね', recipe_likes_path(@recipe) %>
+            <% end %>
+          <% end %>
         </div>
       </div>
+
+      <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <div class="recipeManage">
+          <%= link_to "編集", edit_recipe_path(@recipe.id), class: "recipeManage__edit" %>
+          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "recipeManage__delete" %>
+        </div>
+      <% end %>
+
+
     </div>
     <div class="top--wrapper__right">
       <div class="top--wrapper__right__photo">
-        <a href="/recipes/<%= recipe.id%>">
-        <%= image_tag recipe.image.to_s, class: "photosize" %>
+        <a href="/recipes/<%= @recipe.id %>">
+        <%= image_tag @recipe.image.to_s, class: "photosize" %>
         </a>
       </div>
+      <div class="top--wrapper__right__created">
+        <%= @recipe.created_at %>
+      </div>
     </div>
+  </div>
   <div class="middle--wrapper">
-    
+    <div class="middle--wrapper__left">
+      <div class="middle--wrapper__left__top">
+        <div class="middle--wrapper__left__top__text">
+          材料
+        </div>
+        <div class="middle--wrapper__left__top__serve">
+          <%= @recipe.serving %> 人前
+        </div>
+      </div>
+      <% @recipe.ingredients.each do |ingr| %>
+        <div class="middle--wrapper__left__ingre">
+          <div class="middle--wrapper__left__ingre__iname">
+            <%= ingr.iname %>
+          </div>
+          <div class="middle--wrapper__left__ingre__amount">
+            <%= ingr.amount %>
+          </div>
+        </div>
+      <% end %> 
+    </div>
+    <div class="middle--wrapper__right">
+      <div class="middle--wrapper__right__top">
+        <form>
+          <%# <div class="middle--wrapper__right__top__form">  %>
+            <input id="keyword" type= "number">
+          <%# </div> %>
+          <%# <div class="middle--wrapper__right__top__btn"> %>
+            <button id = "button">人前を表示</button>
+          <%# </div> %>
+        </form>
+      </div>
+      <div class="middle--wrapper__right__calcamount">
+        <div class ="result"></div>
+      </div>
+    </div>
   </div>
   <div class="bottom--wrapper">
+    <div class="bottom--wrapper__howto">作り方</div>
+    <div class="bottom--wrapper__wrapper">
+      <% @recipe.recipelists.each_with_index do |recipelist, i| %>
+        <div class="bottom--wrapper__wrapper__list">
+          <div class="bottom--wrapper__wrapper__list__count">
+            <%= i + 1 %>
+          </div>
+          <div class="bottom--wrapper__wrapper__list__image">          
+            <%= image_tag recipelist.image.to_s, class: "photolist" %>
+          </div>
+          <div class="bottom--wrapper__wrapper__list__text">
+            <%= recipelist.text %>
+          </div>
+        </div>
+
+
+      <% end %>
+
+
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="postTitle">
-  <%= @recipe.title %>
-</div>
-
-<h3>いいね件数: <%= @recipe.likes.count %></h3>
-
-<% if user_signed_in? %>
-
-  <% if current_user.already_liked?(@recipe) %>
-    <%= button_to 'いいねを取り消す', recipe_like_path(@recipe), method: :delete %>
-  <% else %>
-    <%= button_to 'いいね', recipe_likes_path(@recipe) %>
-  <% end %>
-
-<% end %>
-
-
-
-<div class="postDate">
-  <%= @recipe.created_at %>
-</div>
-<div class="postAuthor">
-</div>
-<% if user_signed_in? && current_user.id == @recipe.user_id %>
-  <div class="postManage">
-    <%= link_to "編集", edit_recipe_path(@recipe.id), class: "postManage__edit" %>
-    <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "postManage__delete" %>
-  </div>
-<% end %>
-
-
-<div class="postText">
-  <%= @recipe.time %>分
-</div>
-
-<div class="recipelist">
-  <div class="zairyou">材料:<%= @recipe.serving %> 人前</div>
-  <% @recipe.ingredients.each do |ingr| %>
-
-  <div class="ingr">
-  <div class="iname"><%= ingr.iname %></div>
-  <div class="amount"><%= ingr.amount %></div>
-  </div>
-  <% end %> 
-</div>
-
-<form>
-    <input id="keyword" type= "number">
-    <button id = "button">ボタン</button>
-    <p class ="result"></p>
-
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -118,13 +113,13 @@
 var pattern = /\//;
 var pattern2 = /\./;
 
-var zairyo = $('.zairyou').text()
+var zairyo = $('.middle--wrapper__left__top__serve').text()
 zairyo = zairyo.replace(/[^\d]/g, "");
 
 $(function(){
 
   let btn = $("#button");
-  let changeText = $('.amount');
+  let changeText = $('.middle--wrapper__left__ingre__amount');
   $('#button').click(function(e) {
     e.preventDefault();
     let input = $("#keyword").val();
@@ -137,7 +132,7 @@ $(function(){
          $(".result").append(value).append('<br />');
     })
 });
-  $('.amount').each(function() {
+  $('.middle--wrapper__left__ingre__amount').each(function() {
     fff = $(this).text()
 
     if ((fff).match(pattern)){
@@ -246,8 +241,8 @@ $(function(){
       array.push(ggg);
 
     } else {
-      ttt = fff.replace(/[\d]/g, " ");
-      var ggg = ttt.replace(/\s+/,result);
+      ttt = fff.replace(/[\d]+/, "pppopo");
+      var ggg = ttt.replace(/pppopo/,result);
       console.log(ggg);
       array.push(ggg);
 
@@ -258,6 +253,3 @@ $(function(){
   });
   });
 </script>
-
-
-
