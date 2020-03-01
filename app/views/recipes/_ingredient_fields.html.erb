@@ -1,7 +1,11 @@
   <div class="nested-fields">
-    <div class="heading-iname">材料を入力してください</div>
-    <%= f.text_field :iname, placeholder: :材料, class: :form__text %>
-    <div class="heading-amount">材料の量を入力してください</div>
-    <%= f.text_field :amount, placeholder: :量, class: :form__text %>
-    <%= link_to_remove_association "remove ingredients", f %>
+    <div class="field">
+      <div class="heading-iname">材料を入力してください</div>
+      <%= f.text_field :iname, placeholder: :材料, class: :form__text %>
+      <div class="heading-amount">材料の量を入力してください</div>
+      <%= f.text_field :amount, placeholder: :量, class: :form__text %>
+    </div>
+    <div class="remove-btn">
+      <%= link_to_remove_association "上の材料を一つ消します", f %>
+    </div>
   </div>

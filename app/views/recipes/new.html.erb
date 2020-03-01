@@ -1,5 +1,6 @@
 <div class="new--wrapper">
   <div class="new--wrapper__top">レシピ新規投稿</div>
+  <div class="recipe-normal">レシピの基本情報</div>
   <%= form_with model: @recipe, class: :form, local: true do |form| %>
 
   <div class="new--wrapper__recipeinfo">
@@ -38,7 +39,7 @@
       <%= render "recipelist_fields", f: recipelist %>
     <% end%>
     <div class="links">
-      <%= link_to_add_association "add recipelist", form, :recipelists %>
+      <%= link_to_add_association "「作り方」欄を一つ増やします", form, :recipelists %>
     </div>
   </div>
 
@@ -47,7 +48,7 @@
       <%= render "ingredient_fields", f: ingredient %>
     <% end%>
     <div class="links">
-      <%= link_to_add_association "add ingredient", form, :ingredients %>
+      <%= link_to_add_association "材料欄を一つ増やします", form, :ingredients %>
     </div>
 
   <div class="new--wrapper__submit">

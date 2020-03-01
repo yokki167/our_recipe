@@ -1,103 +1,166 @@
 .new--wrapper{
-  width: 65%;
+  width: 45%;
   height: 100%;
   margin: 0 auto;
   background-color: white;
   &__top{
     font-size: 2em;
+    position: relative;
+    width: 100%;
+
+
+  }
+  &__top:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 7px;
+    box-sizing: border-box;
+
+    border-top: 3px solid #f5d6a8;
+    border-bottom: 1px solid #fff0c6;
+
+  }
+  .recipe-normal{
+    padding-top: 30px;
+    font-size: 1.2em;
   }
   &__recipeinfo{
     &__title{
+      padding-bottom: 40px;
 
     }
     .form__title{
-
+      width: 80%;
     }
     &__serve{
+      padding-bottom: 40px;
+
       .heading-serve{
 
       }
       .form__serving{
-
+        width: 80%;
       }
     }
     &__ByEatTime{
+      padding-bottom: 20px;
+
       .heading-ByEatTime{
 
       }
       .form__time{
-
+        width: 80%;
       }
     }
     &__WorkTime{
+      padding-bottom: 40px;
+
       .heading-WorkTime{
 
       }
       .form-time{
-
+        width: 80%;
       }
     }
     &__oneword{
+      padding-bottom: 40px;
+
       .heading-oneword{
 
       }
       .form__oneword{
+        width: 80%;
+        height: 4em;
 
       }
     }
     &__point{
+      padding-bottom: 40px;
+
       .heading-point{
 
       }
       .form__point{
+        width: 80%;
+        height: 4em;
 
       }
     }
     &__image{
+      padding-bottom: 40px;
+
       .heading-image{
 
       }
       .form__image{
-
+        width: 80%;
       }
     }
   }
 
   &__HowToMake{
+    padding-bottom: 40px;
+
     .nested-fields{
       .field{
         .heading-howto{
+          padding-top: 40px;
 
         }
         .form__text{
-
+          width: 80%;
+          height: 4em;
         }
         .heading-howto-image{
-
+          padding-top: 20px;
         }
+      }
+      .remove-btn{
+        padding-top: 40px;
+ 
       }
     }
     .links{
+      padding-top: 20px;
+      text-decoration: none;
 
     }
   }
 
   &__ingredi{
+    padding-bottom: 40px;
+
     .nested-fields{
-      .heading-iname{
+      .field{
+        .heading-iname{
+          
+        }
+        .form__text{
+          width: 80%;
+        }
+        .heading-amount{
+          padding-top: 40px;
 
-      }
-      .form__text{
-
-      }
-      .heading-amount{
-
-      }
-      .form__text{
-
+        }
+        .form__text{
+          width: 80%;
+          
+        }
+        .remove-btn{
+          text-decoration: none;
+          color: black;
+          .remove_fields.dynamic{
+            text-decoration: none;
+          }
+        }
       }
     }
     .links{
+      padding-top: 20px;
+
 
     }
   }
