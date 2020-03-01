@@ -1,15 +1,36 @@
+
+      <% if user_signed_in? && current_user.id == @recipe.user_id %>
+        <div class="recipeManage">
+          <%= link_to "編集", edit_recipe_path(@recipe.id), class: "recipeManage__edit" %>
+          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "recipeManage__delete" %>
+        </div>
+      <% end %>
+
+
 <div class="show--wrapper">
   <div class="top--wrapper">
     <div class="top--wrapper__left">
       <div class="top--wrapper__left__recipename">
          <%= @recipe.title %>
       </div>
+
+
       <div class="postAuthor">
         by:<%= link_to @recipe.user.nickname, user_path(@recipe.user), class: "nickname-deco" %>
       </div>
 
+      <div class="top--wrapper__left__time">
+        <div class="top--wrapper__left__time__worktime">
+          調理時間:<%= @recipe.worktime %>分
+        </div>
+        <div class="top--wrapper__left__time__byEatTime">
+          食べるまで:<%= @recipe.time %>分
+        </div>
+      </div>
+
+
       <div class="top--wrapper__left__oneword">
-        美味しい
+        <%= @recipe.oneword %>
       </div>
       <div class="top--wrapper__left__likewrapper">
         <div class="top--wrapper__left__likewrapper__count">
@@ -26,12 +47,6 @@
         </div>
       </div>
 
-      <% if user_signed_in? && current_user.id == @recipe.user_id %>
-        <div class="recipeManage">
-          <%= link_to "編集", edit_recipe_path(@recipe.id), class: "recipeManage__edit" %>
-          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "recipeManage__delete" %>
-        </div>
-      <% end %>
 
 
     </div>
@@ -101,8 +116,14 @@
 
 
       <% end %>
-
-
+    </div>
+    <div class="point1">
+      point!!
+    </div>
+    <div class="point">
+      <div class="point--main">
+        <%= @recipe.point %>
+      </div>
     </div>
   </div>
 </div>
