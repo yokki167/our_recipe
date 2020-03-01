@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     # @recipe = Recipe.find(params[:id])
 
     @user = User.find(params[:id])
-    @recipes = @user.recipes
+    @recipes = @user.recipes.order("created_at DESC")
   end
 
 

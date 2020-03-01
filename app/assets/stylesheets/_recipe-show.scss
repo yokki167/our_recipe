@@ -19,7 +19,21 @@
 
      .top--wrapper__left__recipename{
         font-size: 3vw;
-        padding-bottom: 20px;
+        // padding-bottom: 20px;
+        position: relative;
+        // padding-bottom: 0.5em;
+     }
+     .top--wrapper__left__recipename:after{
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 7px;
+      box-sizing: border-box;
+      border-top: 3px solid #f5d6a8;
+      border-bottom: 1px solid #fff0c6;
+      
      }
      .postAuthor{
         font-size: 1.5vw;
@@ -232,9 +246,9 @@
         }
         &__text{
           border: 4px solid #82636b;
-    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
-    margin: 2em 0;
-    padding: 2em;
+          border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+          margin: 2em 0;
+          padding: 2em;
         }
         &__textp.nomal{
           word-wrap: break-word;
