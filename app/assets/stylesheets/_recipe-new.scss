@@ -1,0 +1,108 @@
+.new--wrapper{
+  width: 65%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  &__top{
+    font-size: 2em;
+  }
+  &__recipeinfo{
+    &__title{
+
+    }
+    .form__title{
+
+    }
+    &__serve{
+      .heading-serve{
+
+      }
+      .form__serving{
+
+      }
+    }
+    &__ByEatTime{
+      .heading-ByEatTime{
+
+      }
+      .form__time{
+
+      }
+    }
+    &__WorkTime{
+      .heading-WorkTime{
+
+      }
+      .form-time{
+
+      }
+    }
+    &__oneword{
+      .heading-oneword{
+
+      }
+      .form__oneword{
+
+      }
+    }
+    &__point{
+      .heading-point{
+
+      }
+      .form__point{
+
+      }
+    }
+    &__image{
+      .heading-image{
+
+      }
+      .form__image{
+
+      }
+    }
+  }
+
+  &__HowToMake{
+    .nested-fields{
+      .field{
+        .heading-howto{
+
+        }
+        .form__text{
+
+        }
+        .heading-howto-image{
+
+        }
+      }
+    }
+    .links{
+
+    }
+  }
+
+  &__ingredi{
+    .nested-fields{
+      .heading-iname{
+
+      }
+      .form__text{
+
+      }
+      .heading-amount{
+
+      }
+      .form__text{
+
+      }
+    }
+    .links{
+
+    }
+  }
+
+  &__submit{
+
+  }
+}

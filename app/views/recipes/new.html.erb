@@ -1,34 +1,58 @@
-<div class="content__title">
-  レシピの入力
-</div>
+<div class="new--wrapper">
+  <div class="new--wrapper__top">レシピ新規投稿</div>
+  <%= form_with model: @recipe, class: :form, local: true do |form| %>
 
+  <div class="new--wrapper__recipeinfo">
+    <div class="new--wrapper__recipeinfo__title">
+      <div class="heading-title">料理のタイトル</div>
+      <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+    </div>
+    <div class="new--wrapper__recipeinfo__serve">
+      <div class="heading-serve">何人前</div>
+      <%= form.number_field :serving, placeholder: :人前, class: :form__serving %>
+    </div>
+    <div class="new--wrapper__recipeinfo__ByEatTime">
+      <div class="heading-ByEatTime">食べるまでの時間(分)</div>
+      <%= form.number_field :time, placeholder: :食べるまでの時間, class: :form__time %>
+    </div>
+    <div class="new--wrapper__recipeinfo__WorkTime">
+      <div class="heading-WorkTime">調理時間(分)</div>
+      <%= form.number_field :worktime, placeholder: :調理時間, class: :form__time %>
+    </div>
+    <div class="new--wrapper__recipeinfo__oneword">
+      <div class="heading-oneword">レシピについて一言</div>
+      <%= form.text_area :oneword, placeholder: :一言, class: :form__oneword %>
+    </div>
+    <div class="new--wrapper__recipeinfo__point">
+      <div class="heading-point">レシピを作る上でのポイント</div>
+      <%= form.text_area :point, placeholder: :"Point!", class: :form__point %>
+    </div>
+    <div class="new--wrapper__recipeinfo__image">
+      <div class="heading-image">完成した料理の写真を選択してください</div>
+      <%= form.file_field :image %>
+    </div>
+  </div>
 
-
-<%= form_with model: @recipe, class: :form, local: true do |form| %>
-
-  <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
-  <%= form.text_field :serving, placeholder: :人前, class: :form__serving %>
-  <%= form.text_field :time, placeholder: :食べるまでの時間, class: :form__time %>
-  <%= form.file_field :image %>
-
-
-
+  <div class="new--wrapper__HowToMake">
     <%= form.fields_for :recipelists do |recipelist| %>
       <%= render "recipelist_fields", f: recipelist %>
     <% end%>
     <div class="links">
       <%= link_to_add_association "add recipelist", form, :recipelists %>
     </div>
+  </div>
 
-    
-
+  <div class="new--wrapper__ingredi">
     <%= form.fields_for :ingredients do |ingredient| %>
       <%= render "ingredient_fields", f: ingredient %>
     <% end%>
     <div class="links">
       <%= link_to_add_association "add ingredient", form, :ingredients %>
     </div>
-  
-      <%= form.submit 'Save' %>
-  
-<% end %>
+
+  <div class="new--wrapper__submit">
+    <%= form.submit 'Save' %>
+  </div>
+    <% end %>
+
+</div>

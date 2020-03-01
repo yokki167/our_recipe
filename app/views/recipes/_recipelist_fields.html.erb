@@ -1,6 +1,8 @@
   <div class="nested-fields">
     <div class="field">
+      <div class="heading-howto">作り方を入力してください</div>
       <%= f.text_area :text, placeholder: :作り方, class: :form__text %>
+      <div class="heading-howto-image">「作り方」の写真を選択してください</div>
       <%= f.file_field :image %>
     </div>
     <%= link_to_remove_association "remove recipelists", f %>

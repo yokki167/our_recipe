@@ -1,3 +1,23 @@
+.recipeManage{
+  display: flex;
+  justify-content: flex-end;
+  .recipeManage__edit{
+    text-decoration: none;
+    color: black;
+    padding-right: 20px;
+    font-size: 1.2em;
+  }
+  .recipeManage__delete{
+    text-decoration: none;
+    color: black;
+    padding-right: 20px;
+    font-size: 1.2em;
+
+
+  }
+ }
+
+
 .show--wrapper{
   width: 65%;
   height: 100%;
@@ -35,6 +55,8 @@
       border-bottom: 1px solid #fff0c6;
       
      }
+
+
      .postAuthor{
         font-size: 1.5vw;
 
@@ -43,6 +65,12 @@
          color: black;
        }
      }
+
+     &__time{
+      display: flex;
+      justify-content: space-around;
+    }
+
      .top--wrapper__left__oneword{
         position: relative;
         margin: 2em 0 2em 40px;
@@ -68,6 +96,10 @@
         left: -23px;
         bottom: 0;
         color: #fff0c6;
+
+     }
+     .top--wrapper__left__oneword:empty{
+       display: none;
      }
 
      .top--wrapper__left__likewrapper{
@@ -76,6 +108,7 @@
        position: absolute;
        bottom: 0;
        width: 100%;
+       
        .top--wrapper__left__likewrapper__count{
        }
        .top--wrapper__left__likewrapper__btn{
@@ -92,16 +125,6 @@
       //   transition: background 1s steps(55);
       
       //  }
-     }
-     .recipeManage{
-      .recipeManage__edit{
-        text-decoration: none;
-        color: black;
-      }
-      .recipeManage__delete{
-        text-decoration: none;
-        color: black;
-      }
      }
    }
    .top--wrapper__right{
@@ -248,12 +271,42 @@
           border: 4px solid #82636b;
           border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
           margin: 2em 0;
-          padding: 2em;
+          padding: 0.6em;
         }
-        &__textp.nomal{
+        &__text.nomal{
           word-wrap: break-word;
         }
       }
     }
+    .point1{
+      font-size: 1.5em;
+      padding-left: 20px;
+    }
+      
+    .point{
+      margin-bottom: 2em;
+      position: relative;
+      padding: 0.5em 1.5em;
+      border-top: solid 2px black;
+      border-bottom: solid 2px black;
+      &--main{
+        font-size: 1em;
+        margin: 0; 
+        padding: 0;
+      }
+    }
+    .point:before, .point:after{
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 2px;
+      height: -webkit-calc(100% + 20px);
+      height: calc(100% + 20px);
+      background-color: black;
+    }
+
+    .point:before {left: 10px;}
+    .point:after {right: 10px;}
+    
   }
 }
