@@ -1,8 +1,10 @@
 body{
   background-color:white;
   min-width: 650px;
+  
 
   .header{
+    z-index: 50;
     height: 56px;
     width: 100%;
     padding: 0 150px;

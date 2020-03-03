@@ -5,7 +5,15 @@
       <div class="heading-howto-image">「作り方」の写真を選択してください</div>
       <%= f.file_field :image %>
     </div>
-    <div class="remove-btn">
-      <%= link_to_remove_association "上の「作り方」を一つ消します", f %>
-    </div>
+      <div class="remove-btn">
+        <div class="links">
+          <label class="icon-label">
+            <i class="fas fa-minus-square"></i>
+            <%= link_to_remove_association "上の「作り方」を一つ消します", f %>
+          </label>
+        </div>
+      </div>
   </div>
+
+
+

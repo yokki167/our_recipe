@@ -3,6 +3,12 @@
   height: 100%;
   margin: 0 auto;
   background-color: white;
+  a{
+    color: black;
+    text-decoration: none;
+    border: solid 2px black;
+  }
+
   &__top{
     font-size: 2em;
     position: relative;
@@ -24,12 +30,22 @@
 
   }
   .recipe-normal{
+
     padding-top: 30px;
+    padding-bottom: 30px;
     font-size: 1.2em;
   }
+
+  .form{
+    padding: 0 20px;
+  }
+
   &__recipeinfo{
+    border: solid 3px #f5d6a8;
+
     &__title{
       padding-bottom: 40px;
+
 
     }
     .form__title{
@@ -85,7 +101,7 @@
       }
       .form__point{
         width: 80%;
-        height: 4em;
+        height: 6em;
 
       }
     }
@@ -101,8 +117,14 @@
     }
   }
 
+  .WayOfCook{
+    font-size: 1.3em;
+    padding-top: 30px;
+  }
+
   &__HowToMake{
     padding-bottom: 40px;
+    border: solid 3px #f5d6a8;
 
     .nested-fields{
       .field{
@@ -125,13 +147,21 @@
     }
     .links{
       padding-top: 20px;
+      padding-bottom: 20px;
       text-decoration: none;
 
     }
   }
 
+  .topIngredients{
+    padding-top: 40px;
+    font-size: 1.3em;
+  }
+
   &__ingredi{
     padding-bottom: 40px;
+    border: solid 3px #f5d6a8;
+
 
     .nested-fields{
       .field{
@@ -160,12 +190,22 @@
     }
     .links{
       padding-top: 20px;
-
+      padding-bottom: 20px;
+      .icon-label{
+        .icon{
+          font-size: 30px;
+        }
+      }
 
     }
   }
 
   &__submit{
-
+    padding-bottom: 40px;
+    padding-top: 40px;
+      
   }
 }
+
+
+

@@ -1,10 +1,9 @@
-
-      <% if user_signed_in? && current_user.id == @recipe.user_id %>
-        <div class="recipeManage">
-          <%= link_to "編集", edit_recipe_path(@recipe.id), class: "recipeManage__edit" %>
-          <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "recipeManage__delete" %>
-        </div>
-      <% end %>
+<% if user_signed_in? && current_user.id == @recipe.user_id %>
+  <div class="recipeManage">
+    <%= link_to "編集", edit_recipe_path(@recipe.id), class: "recipeManage__edit" %>
+    <%= link_to "削除", recipe_path(@recipe.id), method: :delete, class: "recipeManage__delete" %>
+  </div>
+<% end %>
 
 
 <div class="show--wrapper">
@@ -113,9 +112,7 @@
             <%= recipelist.text %>
           </div>
         </div>
-
-
-      <% end %>
+  <% end %>
     </div>
     <div class="point1">
       point!!
@@ -212,14 +209,16 @@ $(function(){
 
 
     
-  } else if ((fff).match('半分')){
+  } else if ((fff).match('半')){
       console.log(fff)
       fff = 0.5
       fff = fff / zairyo
       fff = fff * 10
-      fff = Math.round(fff);
+      fff = Math.round(fff, 1);
+      console.log(fff)
       fff = fff / 10
       fff = fff * input
+      fff = Math.round(fff, 1);
       ggg = fff
       console.log(ggg)
       array.push(ggg);
@@ -251,9 +250,9 @@ $(function(){
       result = result / zairyo
       result = result * 10
       result = Math.round(result);
-      result = result / 10
+      result = result / 100
       result = result * input
-      result = result * 10
+      result = result * 100
       result = Math.round(result);
       result = result / 10
 

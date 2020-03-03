@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    # binding.pry
     @recipe = Recipe.find(params[:id])
     @like = Like.new
     a = @recipe.ingredients

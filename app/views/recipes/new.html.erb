@@ -34,26 +34,40 @@
     </div>
   </div>
 
+
+
+  <div class="WayOfCook">作り方</div>
   <div class="new--wrapper__HowToMake">
     <%= form.fields_for :recipelists do |recipelist| %>
       <%= render "recipelist_fields", f: recipelist %>
     <% end%>
     <div class="links">
-      <%= link_to_add_association "「作り方」欄を一つ増やします", form, :recipelists %>
+      <label class="icon-label">
+        <i class="fas fa-plus"></i>
+        <%= link_to_add_association "「作り方」欄を一つ増やします", form, :recipelists %>
+      </label> 
     </div>
   </div>
 
+
+  <div class="topIngredients">材料</div>
   <div class="new--wrapper__ingredi">
     <%= form.fields_for :ingredients do |ingredient| %>
       <%= render "ingredient_fields", f: ingredient %>
     <% end%>
     <div class="links">
-      <%= link_to_add_association "材料欄を一つ増やします", form, :ingredients %>
+      <label class="icon-label">
+          <i class="fas fa-plus"></i>
+          <%= link_to_add_association "上の材料を一つ増やします", form, :ingredients %>
+      </label>
     </div>
+  </div>
 
-  <div class="new--wrapper__submit">
+  <div class="new--wrapper__submit">    
     <%= form.submit 'Save' %>
   </div>
-    <% end %>
+
+<% end %>
 
 </div>
+
