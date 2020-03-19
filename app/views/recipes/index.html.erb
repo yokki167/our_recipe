@@ -14,7 +14,7 @@
           <%= link_to recipe.title, recipe_path(recipe.id), class: "title-deco" %>
         </div>
         <div class="recipe--wrapper__recipe__name__nickname">
-          <%= link_to recipe.user.nickname, user_path(recipe.user), class: "nickname-deco" %>
+          by:<%= link_to recipe.user.nickname, user_path(recipe.user), class: "nickname-deco" %>
         </div>
       </div>
       <div class="recipe--wrapper__recipe__oneword">
