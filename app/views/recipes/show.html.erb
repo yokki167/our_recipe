@@ -105,9 +105,11 @@
           <div class="bottom--wrapper__wrapper__list__count">
             <%= i + 1 %>
           </div>
-          <div class="bottom--wrapper__wrapper__list__image">          
-            <%= image_tag recipelist.image.to_s, class: "photolist" %>
-          </div>
+          <% if recipelist.image.present? %>
+            <div class="bottom--wrapper__wrapper__list__image">          
+              <%= image_tag recipelist.image.to_s, class: "photolist" %>
+            </div>
+          <% end %>
           <div class="bottom--wrapper__wrapper__list__text">
             <%= recipelist.text %>
           </div>
