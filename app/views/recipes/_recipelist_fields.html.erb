@@ -3,13 +3,17 @@
       <div class="heading-howto">作り方を入力してください</div>
       <%= f.text_area :text, placeholder: :作り方, class: :form__text %>
       <div class="heading-howto-image">「作り方」の写真を選択してください</div>
-      <%= f.file_field :image %>
+      <div id="h">
+        <%= f.file_field :image, class:"image" %>
+        <div id="result_recipelist_add"></div>
+      </div>
+
     </div>
       <div class="remove-btn">
         <div class="links">
           <label class="icon-label">
             <i class="fas fa-minus-square"></i>
-            <%= link_to_remove_association "上の「作り方」を一つ消します", f %>
+              <%= link_to_remove_association "上の「作り方」を一つ消します", f %>
           </label>
         </div>
       </div>

@@ -28,9 +28,16 @@
       <div class="heading-point">レシピを作る上でのポイント</div>
       <%= form.text_area :point, placeholder: :"Point!", class: :form__point %>
     </div>
+
+
+    <div class="new--wrapper__recipeinfo__taste">
+      <div class="heading-taste">料理の味付け</div>
+      <%#= form.select %>
+    </div>
     <div class="new--wrapper__recipeinfo__image">
       <div class="heading-image">完成した料理の写真を選択してください</div>
       <%= form.file_field :image %>
+      <div id="result"></div>
     </div>
   </div>
 
@@ -40,6 +47,8 @@
   <div class="new--wrapper__HowToMake">
     <%= form.fields_for :recipelists do |recipelist| %>
       <%= render "recipelist_fields", f: recipelist %>
+            <%# <div id="result_recipelist_add"></div> %>
+
     <% end%>
     <div class="links">
       <label class="icon-label">
@@ -64,10 +73,51 @@
   </div>
 
   <div class="new--wrapper__submit">    
-    <%= form.submit 'Save' %>
+    <%# <%= form.submit 'Save' %>
+    <%= form.submit 'Save', class:"submit-bottun" %>
   </div>
 
 <% end %>
 
 </div>
+
+
+<script>
+  $(function(){
+    $('#recipe_image').change(function(){
+        $('img').remove();
+        var file = $(this).prop('files')[0];
+        if(!file.type.match('image.*')){
+            return;
+        }
+        var fileReader = new FileReader();
+        fileReader.onloadend = function() {
+            $('#result').html('<img src="' + fileReader.result + '"/>');
+        }
+        fileReader.readAsDataURL(file);
+    });
+  });
+
+
+
+
+
+  $(function(){
+    // $('.image').change(function(){
+    $(document).on('change','.image',function(){
+        // $('.image').remove();
+        var file = $(this).prop('files')[0];
+        if(!file.type.match('image.*')){
+            return;
+        }
+        var fileReader = new FileReader();
+        fileReader.onloadend = function() {
+          console.log("sss")
+            $('#result_recipelist_add').html('<img src="' + fileReader.result + '"/>');
+        }
+        fileReader.readAsDataURL(file);
+    });
+});
+
+  </script>
 
