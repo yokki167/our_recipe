@@ -17,6 +17,21 @@
       <div class="header__title">
         <%= link_to "Our Recipe", root_path, class: "header__title--text" %>
       </div>
+      <div class="search">
+        <div class="search__box">
+          <form action="/" name="search" method="post">
+            <dl class="search2">
+              <dt><input type="text" class="search" name="search" value="" placeholder="Recipe title" ></dt>
+              <dd><button>Search</button></dd>
+            </dl>
+          </form>
+        </div>
+
+      </div>
+      <div class="detile-search">
+        詳細検索
+      </div>
+
       <div class="header__right">
         <% if user_signed_in? %>
           <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>
