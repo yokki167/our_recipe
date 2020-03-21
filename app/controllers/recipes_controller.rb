@@ -18,9 +18,15 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to root_path
+    else
+      redirect_to new_recipe_path
+    end
     # binding.pry
-    Recipe.create!(recipe_params)
-    redirect_to root_path
+    # Recipe.create!(recipe_params)
+    # redirect_to root_path
   end
 
   def show
@@ -38,9 +44,17 @@ class RecipesController < ApplicationController
   end
 
   def update
-    recipe = Recipe.find(params[:id])
-    recipe.update(recipe_params)
-    redirect_to recipe_path(recipe.id)
+    @recipe = Recipe.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to root_path
+    else
+      redirect_to recipe_path(@recipe.id)
+    end
+
+    # recipe = Recipe.find(params[:id])
+    # recipe.update(recipe_params)
+    # redirect_to recipe_path(recipe.id)
   end
 
   def destroy
