@@ -8,8 +8,6 @@
   <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%#= form.collection_select(:dish_id, @recipe, :id, :name) %>
   <%#= form.select :dish_id, Recipe %>
-  <%= form.collection_select :dish_id, Dish.all, :id, :name %>
-  <%= form.collection_select :mainmaterial_id, Mainmaterial.all, :id, :name %>
 
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
@@ -35,6 +33,11 @@
     <div class="new--wrapper__recipeinfo__point">
       <div class="heading-point">レシピを作る上でのポイント</div>
       <%= form.text_area :point, placeholder: :"Point!", class: :form__point %>
+    </div>
+    <div class="new--wrapper__recipeinfo__category">
+      <%= form.collection_select :dish_id, Dish.all, :id, :name, prompt: "---" %>
+      <%= form.collection_select :mainmaterial_id, Mainmaterial.all, :id, :name, prompt: "---" %>
+      <%= form.collection_select :eattime_id, Eattime.all, :id, :name, prompt: "---" %>
     </div>
 
 
