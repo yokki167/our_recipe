@@ -6,7 +6,9 @@
   <div class="new--wrapper__top">レシピ新規投稿</div>
   <div class="recipe-normal">レシピの基本情報</div>
   <%= form_with model: @recipe, class: :form, local: true do |form| %>
-
+  <%#= form.collection_select(:dish_id, @recipe, :id, :name) %>
+  <%#= form.select :dish_id, Recipe %>
+  <%= form.collection_select :dish_id, Dish.all, :id, :name %>
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
       <div class="heading-title">料理のタイトル</div>

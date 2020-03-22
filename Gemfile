@@ -67,3 +67,4 @@ gem 'pry-rails'
 gem "jquery-rails"
 gem "cocoon"
 gem 'font-awesome-sass'
+gem 'active_hash'

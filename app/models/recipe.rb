@@ -1,4 +1,7 @@
 class Recipe < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :dish
+
   validates :title, :time, presence: true
 
   belongs_to :user
