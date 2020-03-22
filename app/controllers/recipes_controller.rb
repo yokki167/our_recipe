@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
   end
 
   def create
+    # binding.pry
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to root_path
@@ -75,7 +76,7 @@ end
   private
   def recipe_params
     params.require(:recipe).permit(
-        :title , :time, :image, :serving, :worktime, :oneword, :point,
+        :title , :time, :image, :serving, :worktime, :oneword, :dish_id, :point,
          recipelists_attributes: [:id, :text, :image, :recipe_id, :_destroy],
          ingredients_attributes:[:id, :iname, :amount, :recipe_id, :_destroy])
          .merge(user_id: current_user.id)
