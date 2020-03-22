@@ -1,3 +1,7 @@
+<header class="header">
+  <%= render 'header-nosearch'%>
+</header>
+
 <% if user_signed_in? && current_user.id == @recipe.user_id %>
   <div class="recipeManage">
     <%= link_to "編集", edit_recipe_path(@recipe.id), class: "recipeManage__edit" %>

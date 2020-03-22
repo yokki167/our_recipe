@@ -26,6 +26,8 @@ body{
     .search{
       width: 40%;
       &__box{
+        .search{
+          width: 100%;
         dl.search2{
           position:relative;
         }
@@ -59,6 +61,7 @@ body{
           border:1px solid rgb(156, 117, 43);
         }
       }
+    }
     }
     .detile-search{
       line-height: 80px;

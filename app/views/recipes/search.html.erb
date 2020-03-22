@@ -1,0 +1,9 @@
+<header class="header">
+  <%= render 'header-nosearch'%>
+</header>
+
+<% @recipe_simple.each do |recipe| %>
+  <%= recipe.title%>
+<% end %>
+ 
+  

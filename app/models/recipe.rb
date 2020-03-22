@@ -15,4 +15,23 @@ class Recipe < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+
+
+  def self.search(search)
+    if search
+      # Recipe.where('title LIKE(?)', "%#{search}%")
+      # Recipe.joins(:ingredients).where(ingredients: {iname: "ああ"})
+      # Recipe.joins(:ingredients).where(ingredients: {'iname LIKE(?)', "%#{search}%"})
+      a=Ingredient.where('iname LIKE(?)', "%#{search}%")
+      array=[]
+      a.each do |f|
+        array<< f.recipe_id  
+      end
+      Recipe.where(id: array).or(Recipe.where('title LIKE(?)', "%#{search}%"))
+
+    else
+      Recipe.all
+    end
+  end
+
 end

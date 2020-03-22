@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :recipes, expect: :index do
     resources :likes, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
     # resources :calculations
   end
 end
