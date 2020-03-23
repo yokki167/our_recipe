@@ -12,6 +12,11 @@
       <a href="/recipes/<%= recipe.id%>">
         <%= image_tag recipe.image.to_s, class: "photosize" %>
       </a>
+        <div class="mask">
+          <% if recipe.dish%>
+            <div class="caption"><%=recipe.dish.name%></div>
+          <% end %>
+        </div>
     </div>
     <div class="recipe--wrapper__recipe">
       <div class="recipe--wrapper__recipe__name">

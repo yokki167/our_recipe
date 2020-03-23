@@ -62,6 +62,9 @@
       <div class="top--wrapper__right__created">
         <%= @recipe.created_at %>
       </div>
+      <div class="top--wrapper__right__category">
+        カテゴリ:<%= @recipe.dish.name%> <%= @recipe.eattime.name%> <%= @recipe.mainmaterial.name%>
+      </div>
     </div>
   </div>
   <div class="middle--wrapper">

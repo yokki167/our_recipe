@@ -20,6 +20,7 @@
     &__photo{
       height: 275px;
       width: 100%;
+      position: relative;
       .photosize{
         height: 275px;
         width: 100%;
@@ -34,8 +35,23 @@
         
 
       }
+      .caption{
+        
+      }
+      .mask{
+        opacity: 0;
+        // background-color: rgba($color: 0,0,0,0,4);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 0;
+      }
+      
         
       
+    }
+    &__photo:hover .mask{
+      opacity: 1;
     }
 
     &__recipe{
