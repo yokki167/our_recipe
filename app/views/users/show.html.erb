@@ -38,9 +38,9 @@
               <%= link_to recipe.user.nickname, user_path(recipe.user), class: "nickname-deco" %>
             </div>
           </div>
-          <%# <div class="recipe--wrapper__recipe__oneword">
-            <%= recipe.oneword%>
-          <%# </div>  %>
+          <div class="recipe--wrapper__recipe__oneword">
+            <%#= recipe.oneword%>
+          </div> 
           <div class="recipe--wrapper__recipe__bottom">
             <div class="recipe--wrapper__recipe__bottom__like">
               いいねの数 : <%= recipe.liked_users.count %>
@@ -76,6 +76,9 @@
                 <%= link_to like.user.nickname, user_path(like.user), class: "nickname-deco" %>
               </div>
             </div>
+          <div class="recipe--wrapper__recipe__oneword">
+            <%#= recipe.oneword%>
+          </div> 
               <div class="recipe--wrapper__recipe__bottom">
                 <div class="recipe--wrapper__recipe__bottom__like">
                   いいねの数 : <%= like.liked_users.count %>
