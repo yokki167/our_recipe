@@ -35,38 +35,37 @@
                 <a href="#" class="init-right">主食・主菜などから選ぶ</a>
                 <ul class="menu__third-level">
                     <!-- 第二階層 -->
-                    <li>
-                      <a href="#">主食</a>
-                    </li>
-                    <li><a href="#"></a>主菜</li>
-                    <li><a href="#">副菜</a></li>
-                    <li><a href="#">スープ・汁物</a></li>
-                    <li><a href="#"></a>おやつ・デザート</li>
-                    <li><a href="#"></a>飲み物</li>
+                    <% Dish.data.each do |dish|%>
+                    
+                      <li>
+                        <%= link_to dish[:name],category_recipe_path(dish[:id]) %>
+                      </li>
+                    <% end %>
                 </ul>
             </li>
             <li>
                 <a href="#" class="init-right">メインの食材から選ぶ</a>
                 <ul class="menu__third-level">
                     <!-- 第二階層 -->
-                    <li>
-                      <a href="#">肉</a>
-                      <a href="#">魚</a>
-                    </li>
-                    <li><a href="#">野菜</a></li>
-                    <li><a href="#">その他</a></li>
+                    <% Mainmaterial.data.each do |mainmaterial|%>
+                    
+                      <li>
+                        <%= link_to mainmaterial[:name],category_recipe_path(mainmaterial[:id]) %>
+                      </li>
+                    <% end %>
                 </ul>
             </li>
             <li>
                 <a href="#" class="init-right">朝食・昼食などから選ぶ</a>
                 <ul class="menu__third-level">
                     <!-- 第二階層 -->
+                    <% Eattime.data.each do |eattime|%>
+                    
+                      <li>
+                        <%= link_to eattime[:name],category_recipe_path(eattime[:id]) %>
+                      </li>
+                    <% end %>
                     <li>
-                      <a href="#">朝食</a>
-                    </li>
-                    <li><a href="#">昼食</a></li>
-                    <li><a href="#"></a>夕食</li>
-                    <li><a href="#"></a>その他</li>
                 </ul>
             </li>
 

@@ -1,0 +1,56 @@
+<header class="header">
+  <%= render 'header'%>
+</header>
+
+ <div class= "search-category">カテゴリ検索結果</div>
+
+<div class="index--wrapper">
+<% @recipes.each do |recipes|%>
+<% recipes.each do |recipe|%>
+
+
+  <div class="recipe--wrapper">
+    <div class="recipe--wrapper__photo">
+      <a href="/recipes/<%= recipe.id%>">
+        <%= image_tag recipe.image.to_s, class: "photosize" %>
+      </a>
+        <div class="mask">
+          <% if recipe.dish%>
+            <div class="caption1"><%= recipe.dish.name %></div>
+          <% end %>
+          <% if recipe.mainmaterial%>
+            <div class="caption2"><%= recipe.mainmaterial.name %></div>
+          <% end%>
+          <% if recipe.eattime%>
+            <div class="caption3"><%= recipe.eattime.name %></div>
+          <% end%>
+        </div>
+    </div>
+    <div class="recipe--wrapper__recipe">
+      <div class="recipe--wrapper__recipe__name">
+        <div class="recipe--wrapper__recipe__name__recipename">
+          <%= link_to recipe.title, recipe_path(recipe.id), class: "title-deco" %>
+        </div>
+        <div class="recipe--wrapper__recipe__name__nickname">
+          by:<%= link_to recipe.user.nickname, user_path(recipe.user), class: "nickname-deco" %>
+        </div>
+      </div>
+      <div class="recipe--wrapper__recipe__oneword">
+        <%= recipe.oneword%>
+      </div>
+      <div class="recipe--wrapper__recipe__bottom">
+        <div class="recipe--wrapper__recipe__bottom__like">
+          いいねの数 : <%= recipe.liked_users.count %>
+        </div>
+        <div class="recipe--wrapper__recipe__bottom__time">
+          食べるまでの時間 : <%= recipe.time %>分
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+
+  </div>
+
+
