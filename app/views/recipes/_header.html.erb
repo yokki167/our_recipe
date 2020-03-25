@@ -22,6 +22,65 @@
   詳細検索
 </div>
 
+
+
+
+
+<ul class="menu">
+    <li class="menu__multi">
+        <a href="#" class="init-bottom">Category</a>
+        <ul class="menu__second-level">
+            <!-- 第一階層 -->
+            <li>
+                <a href="#" class="init-right">主食・主菜などから選ぶ</a>
+                <ul class="menu__third-level">
+                    <!-- 第二階層 -->
+                    <li>
+                      <a href="#">主食</a>
+                    </li>
+                    <li><a href="#"></a>主菜</li>
+                    <li><a href="#">副菜</a></li>
+                    <li><a href="#">スープ・汁物</a></li>
+                    <li><a href="#"></a>おやつ・デザート</li>
+                    <li><a href="#"></a>飲み物</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="init-right">メインの食材から選ぶ</a>
+                <ul class="menu__third-level">
+                    <!-- 第二階層 -->
+                    <li>
+                      <a href="#">肉</a>
+                      <a href="#">魚</a>
+                    </li>
+                    <li><a href="#">野菜</a></li>
+                    <li><a href="#">その他</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="init-right">朝食・昼食などから選ぶ</a>
+                <ul class="menu__third-level">
+                    <!-- 第二階層 -->
+                    <li>
+                      <a href="#">朝食</a>
+                    </li>
+                    <li><a href="#">昼食</a></li>
+                    <li><a href="#"></a>夕食</li>
+                    <li><a href="#"></a>その他</li>
+                </ul>
+            </li>
+
+            <!-- 他メニュー省略 -->
+        </ul>
+    </li>
+    <!-- 他グローバルナビメニュー省略 -->
+</ul>
+
+
+
+
+
+
 <div class="header__right">
   <% if user_signed_in? %>
     <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>
