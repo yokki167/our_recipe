@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  # post '/recipes/:id', to: 'calculations#create'
   resources :users, only: :show
   resources :recipes, expect: :index do
     resources :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end
-    # resources :calculations
+    member do
+      get 'category'
+    end
   end
 end
