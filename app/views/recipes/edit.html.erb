@@ -32,6 +32,12 @@
       <div class="heading-point">レシピを作る上でのポイント</div>
       <%= form.text_area :point, placeholder: :"Point!", class: :form__point %>
     </div>
+    <div class="new--wrapper__recipeinfo__category">
+      <%= form.collection_select :dish_id, Dish.all, :id, :name, prompt: "---" %>
+      <%= form.collection_select :mainmaterial_id, Mainmaterial.all, :id, :name, prompt: "---" %>
+      <%= form.collection_select :eattime_id, Eattime.all, :id, :name, prompt: "---" %>
+    </div>
+
     <div class="new--wrapper__recipeinfo__image">
       <div class="heading-image">完成した料理の写真を選択してください</div>
       <%= form.file_field :image %>
@@ -66,8 +72,9 @@
     </div>
   </div>
 
-  <div class="new--wrapper__submit">
-    <%= form.submit 'Save' %>
+  <div class="new--wrapper__submit">    
+    <%# <%= form.submit 'Save' %>
+    <%= form.submit 'Save', class:"submit-bottun" %>
   </div>
     <% end %>
 

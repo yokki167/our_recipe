@@ -16,6 +16,18 @@
           <a href="/recipes/<%= recipe.id%>">
             <%= image_tag recipe.image.to_s, class: "photosize" %>
           </a>
+        <div class="mask">
+          <% if recipe.dish%>
+            <div class="caption1"><%= recipe.dish.name %></div>
+          <% end %>
+          <% if recipe.mainmaterial%>
+            <div class="caption2"><%= recipe.mainmaterial.name %></div>
+          <% end%>
+          <% if recipe.eattime%>
+            <div class="caption3"><%= recipe.eattime.name %></div>
+          <% end%>
+        </div>
+
         </div>
         <div class="recipe--wrapper__recipe">
           <div class="recipe--wrapper__recipe__name">
