@@ -5,6 +5,7 @@
   // padding-right: 8%;
   margin: 0 auto;
   width: 90%;
+  height: 100%;
   .recipe--wrapper{
     height: 372px;
     width: 275px;
@@ -35,16 +36,54 @@
         
 
       }
-      .caption{
-        
-      }
+      
       .mask{
         opacity: 0;
+        display: flex;
         // background-color: rgba($color: 0,0,0,0,4);
         -webkit-transition: all 0.2s ease;
         transition: all 0.2s ease;
         position: absolute;
         top: 0;
+        height: 45px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        align-items: center;
+
+        .caption1{
+          display: inline-block;
+          padding: 0.1em .8em;
+          border-radius: 15px;
+          text-decoration: none;
+          color: #000000;
+          background: #aefabe;
+          font-size: 0.9em;
+          height: 50%;
+          bottom: 0;
+
+        }
+        .caption2{
+          display: inline-block;
+          padding: 0.1em .8em;
+          border-radius: 15px;
+          text-decoration: none;
+          color: #000000;
+          background: #faa4be;
+          font-size: 0.9em;
+          height: 50%;
+
+        }
+        .caption3{
+          display: inline-block;
+          padding: 0.1em .8em;
+          border-radius: 15px;
+          text-decoration: none;
+          color: #000000;
+          background: #fcc47c;
+          font-size: 0.9em;
+          height: 50%;
+
+        }
       }
       
         
