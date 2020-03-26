@@ -39,6 +39,8 @@ body{
           padding:8px;
           background-color:#fff;
           border:1px solid #aaa;
+          border-radius: 15px;
+
         }
         dl.search2 dt input{
           width:100%;
@@ -47,6 +49,10 @@ body{
           background:none;
           border:none;
           outline: none;
+          border-radius: 10px;
+
+
+          
         }
         dl.search2 dd{
           position:absolute;
@@ -62,6 +68,8 @@ body{
           text-align:center;
           background-color:rgb(156, 117, 43);
           border:1px solid rgb(156, 117, 43);
+          border-radius: 20px;
+
         }
       }
     }

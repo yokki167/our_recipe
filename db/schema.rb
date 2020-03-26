@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_131507) do
+ActiveRecord::Schema.define(version: 2020_03_26_074728) do
 
   create_table "calculations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id"
@@ -51,16 +51,16 @@ ActiveRecord::Schema.define(version: 2020_03_22_131507) do
   end
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.string "image"
-    t.integer "time"
-    t.integer "serving"
+    t.string "title", null: false
+    t.string "image", null: false
+    t.integer "time", null: false
+    t.integer "serving", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "point"
-    t.string "oneword"
-    t.integer "worktime"
+    t.string "oneword", limit: 55
+    t.integer "worktime", null: false
     t.integer "dish_id"
     t.integer "mainmaterial_id"
     t.integer "eattime_id"
