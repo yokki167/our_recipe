@@ -182,6 +182,39 @@
 
       }
     }
+
+    &__form{
+      margin-top: 16px;
+      align-items: center;
+      width: 100%;  
+      padding-bottom: 40px;
+      .heading-tag{
+        font-weight: 600;
+    margin-bottom: 16px;
+      }
+      &__tag{
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        width: inherit; 
+        select{
+          width: 100%;
+          height: 48px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          margin: 0;
+          padding: 13px 16px;
+          resize: vertical;
+          vertical-align: middle;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+
     &__image{
       padding-bottom: 40px;
 
@@ -263,8 +296,8 @@
 
   &__ingredi{
     padding-bottom: 40px;
-    padding-top: 30px;
-    border-top: 0.05rem solid rgb(253, 153, 153);
+    // padding-top: 30px;
+    // border-top: 0.05rem solid rgb(253, 153, 153);
 
     // border: solid 3px #f5d6a8;
 
@@ -272,7 +305,8 @@
     .nested-fields{
       .field{
         .heading-iname{
-          
+          border-top: 0.05rem solid rgb(253, 153, 153);
+
         }
         .form__text{
           width: 100%;
@@ -289,6 +323,7 @@
         .heading-iname{
           font-weight: 600;
           margin-bottom: 16px;
+          padding-top: 30px;
         }
         .heading-amount{
           padding-top: 40px;
@@ -362,6 +397,28 @@
   
 }
 
+}
+
+#result_recipelist_add{
+  width: 220px;
+  background-color: #fdb14d;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  display: none;
+  // &__text{
+  //   color: #fff;
+  //   display: block;
+  //   font-size: 20px;
+  //   text-decoration: none;
+  //   margin-bottom: 5px;
+  // }
+  // &__icon{
+  //   width: 60px;
+  // }
 }
 
 

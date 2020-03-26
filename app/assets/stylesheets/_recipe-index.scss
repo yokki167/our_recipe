@@ -107,7 +107,15 @@
       &__name{
         display: flex;
         justify-content: space-between;
+
+
+
         &__recipename{
+          width: 184px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+  
           .title-deco{
             text-decoration: none;
             color: blue;
