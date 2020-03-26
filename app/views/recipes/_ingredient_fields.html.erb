@@ -8,8 +8,10 @@
     <div class="remove-btn">
       <div class="links">
         <label class="icon-label">
-          <i class="fas fa-minus-square"></i>
-          <%= link_to_remove_association "上の材料を一つ消します", f %>
+          <%= link_to_remove_association f do %>
+            <i class="fas fa-minus"></i>            
+            材料欄を減らす
+          <% end %>
         </label>
       </div>    
     </div>
