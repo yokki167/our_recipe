@@ -34,21 +34,28 @@
       <div class="heading-point">レシピを作る上でのポイント</div>
       <%= form.text_area :point, placeholder: :"Point!", class: :form__point %>
     </div>
-    <div class="new--wrapper__recipeinfo__category">
+
+    <div class ="new--wrapper__recipeinfo__form">
+    <div class="heading-tag"> タグの選択</div>
+    <div class="new--wrapper__recipeinfo__form__tag">
+    <div class="dish-tag">主食・主菜などから選んでください</div>
       <%= form.collection_select :dish_id, Dish.all, :id, :name, prompt: "---" %>
+    <div class="mainmaterial">メインの食材から選んでください</div>
       <%= form.collection_select :mainmaterial_id, Mainmaterial.all, :id, :name, prompt: "---" %>
+    <div class="eattime">朝食・昼食などから選んでください</div>
       <%= form.collection_select :eattime_id, Eattime.all, :id, :name, prompt: "---" %>
     </div>
-
-
-    <div class="new--wrapper__recipeinfo__taste">
-      <div class="heading-taste">料理の味付け</div>
-      <%#= form.select %>
     </div>
+
+
+
+    <%# <div class="new--wrapper__recipeinfo__taste">
+      <div class="heading-taste">料理の味付け</div> %>
+      <%#= form.select %>
+    <%# </div> %>
     <div class="new--wrapper__recipeinfo__image">
       <div class="heading-image">完成した料理の写真を選択してください</div>
       <%= form.file_field :image %>
-      <div id="result"></div>
     </div>
   </div>
 
@@ -79,6 +86,7 @@
       <label class="icon-label">
           <i class="fas fa-plus"></i>
           <%= link_to_add_association "上の材料を一つ増やします", form, :ingredients %>
+
       </label>
     </div>
   </div>
@@ -88,6 +96,10 @@
     <%= form.submit 'Save', class:"submit-bottun" %>
   </div>
 
+
+
 <% end %>
 
 </div>
+  <div id="result_recipelist_add"></div>
+

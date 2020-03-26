@@ -7,7 +7,8 @@ $(function(){
       }
       var fileReader = new FileReader();
       fileReader.onloadend = function() {
-          $('#result').html('<img src="' + fileReader.result + '"/>');
+        $('#result_recipelist_add').css('display','block');
+          $('#result_recipelist_add').html('<img src="' + fileReader.result + '"/>');
       }
       fileReader.readAsDataURL(file);
   });
@@ -23,9 +24,10 @@ $(function(){
       }
       var fileReader = new FileReader();
       fileReader.onloadend = function() {
-        console.log("sss")
+        $('#result_recipelist_add').css('display','block');
           $('#result_recipelist_add').html('<img src="' + fileReader.result + '"/>');
       }
       fileReader.readAsDataURL(file);
   });
 });
+
