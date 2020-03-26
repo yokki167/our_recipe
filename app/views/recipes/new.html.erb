@@ -70,8 +70,10 @@
     <% end%>
     <div class="links">
       <label class="icon-label">
-        <i class="fas fa-plus"></i>
-        <%= link_to_add_association "「作り方」欄を一つ増やします", form, :recipelists %>
+        <%= link_to_add_association form, :recipelists do %>
+          <i class="fas fa-plus"></i>
+          作り方を増やす
+        <% end %>
       </label> 
     </div>
   </div>
@@ -84,9 +86,10 @@
     <% end%>
     <div class="links">
       <label class="icon-label">
-          <i class="fas fa-plus"></i>
-          <%= link_to_add_association "上の材料を一つ増やします", form, :ingredients %>
-
+          <%= link_to_add_association form, :ingredients do %>
+            <i class="fas fa-plus"></i>
+            材料を増やす
+          <% end%>
       </label>
     </div>
   </div>
