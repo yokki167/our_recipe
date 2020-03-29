@@ -8,6 +8,9 @@
   <%= form_with model: @recipe, class: :form, local: true do |form| %>
   <%#= form.collection_select(:dish_id, @recipe, :id, :name) %>
   <%#= form.select :dish_id, Recipe %>
+<%= render 'layouts/error_messages', model: form.object %>
+
+
 
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
