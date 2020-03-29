@@ -1,0 +1,18 @@
+<div class="top--wrapper__left__likewrapper">
+  <div class="top--wrapper__left__likewrapper__count">
+    いいね数 : <%= recipe.likes.count %>
+  </div>
+  <div class="top--wrapper__left__likewrapper__btn">
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(recipe) %>
+        <%= link_to recipe_like_path(recipe_id: recipe.id, id: current_user.id), method: :delete, class: "likebtn", remote: true do %>
+          <i class="fas fa-star"></i>:いいねを外す
+        <% end %>
+      <% else %>
+        <%= link_to recipe_likes_path(recipe), method: :post, class: "unlikebtn", remote: true  do %>
+          <i class="far fa-star"></i>:いいね!!
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
