@@ -69,6 +69,7 @@ gem "cocoon"
 gem 'font-awesome-sass'
 gem 'active_hash'
 gem 'fog-aws'
+gem 'rails-i18n'
 
 
 group :development, :test do

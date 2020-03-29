@@ -6,6 +6,7 @@
   <div class="new--wrapper__top">レシピ新規投稿</div>
   <div class="recipe-normal">レシピの基本情報</div>
   <%= form_with model: @recipe, class: :form, local: true do |form| %>
+    <%= render 'layouts/error_messages', model: form.object %>
 
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
