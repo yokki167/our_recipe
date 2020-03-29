@@ -5,8 +5,6 @@ class Recipe < ApplicationRecord
   belongs_to_active_hash :eattime
 
 
-  validates :title, :time, presence: true
-
   belongs_to :user
   has_many :recipelists, dependent: :destroy
   has_many :ingredients, dependent: :destroy
@@ -20,6 +18,17 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :ingredients,  allow_destroy: :true
 
   mount_uploader :image, ImageUploader
+
+  validates :title, :time, presence: true
+  validates :image, presence: true
+  validates :serving, presence: true
+  validates :worktime, presence: true
+  validates :serving, numericality: { only_integer: true }
+  validates :worktime, numericality: { only_integer: true }
+  validates :time, numericality: { only_integer: true }
+  validates :oneword, length: { maximum: 55 }
+
+
 
 
 
