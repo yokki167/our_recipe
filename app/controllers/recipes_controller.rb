@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to root_path
     else
-      redirect_to new_recipe_path
+      render action: :new
     end
     # binding.pry
     # Recipe.create!(recipe_params)
@@ -42,6 +42,11 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_params)
+      redirect_to root_path
+    else
+      render action: :edit
+    end
   end
 
   def update
