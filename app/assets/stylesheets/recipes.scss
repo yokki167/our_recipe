@@ -20,9 +20,13 @@ body{
     &__title{
       font-size: 30px;
       line-height: 80px;
+      .fas.fa-seedling{
+        font-size: 2vw;
+      }
       &--text{
         text-decoration: none;
         color: #fff;
+        font-size: 2vw;
       }
     }
 
@@ -76,6 +80,7 @@ body{
     }
     .detile-search{
       line-height: 80px;
+      font-size: 1vw;
     }
     
 
@@ -178,6 +183,11 @@ body{
   
   .menu {
       *zoom: 1;
+      &__multi{
+        .init-bottom{
+          font-size: 1vw;
+        }
+      }
   }
 
     .menu > li.menu__multi {
@@ -274,6 +284,7 @@ body{
         line-height: 80px;
         color: #fff;
         margin-left:15px;
+        font-size: 1vw;
       }
     }
   }
