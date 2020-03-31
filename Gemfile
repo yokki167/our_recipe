@@ -70,6 +70,8 @@ gem 'font-awesome-sass'
 gem 'active_hash'
 gem 'fog-aws'
 gem 'rails-i18n'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 
 
 group :development, :test do
