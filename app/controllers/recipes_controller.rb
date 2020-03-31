@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   # before_action :set_ing only: :show
-  before_action :movie_to_index, except: [:index, :show]
+  before_action :movie_to_index, except: [:index, :show, :search, :category]
 
   def index
     @recipes = Recipe.includes(:user).order("created_at DESC")
