@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :calculations
   has_many :calculations_recipes, through: :calculations, source: :recipe
 
+  validates :nickname, presence: true, length: { maximum: 20 }
+
   def already_liked?(recipe)
     self.likes.exists?(recipe_id: recipe.id)
   end
