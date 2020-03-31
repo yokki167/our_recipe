@@ -5,39 +5,27 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.includes(:user).order("created_at DESC")
-    
-
   end
 
   def new
     @recipe = Recipe.new
     @recipelists = @recipe.recipelists.build 
-    @ingredients = @recipe.ingredients.build 
-    # @recipelists.ingredients.build
-
+    @ingredients = @recipe.ingredients.build
   end
 
   def create
-    # binding.pry
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to root_path
     else
       render action: :new
     end
-    # binding.pry
-    # Recipe.create!(recipe_params)
-    # redirect_to root_path
   end
 
   def show
-    # binding.pry
     @recipe = Recipe.find(params[:id])
     @like = Like.new
     a = @recipe.ingredients
-    # @calculation = @recipe.calculations.new(calculation_params)
-
-
   end
 
   def edit
@@ -51,26 +39,20 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-
     if @recipe.update(recipe_params)
       redirect_to root_path
     else
       redirect_to recipe_path(@recipe.id)
     end
-
-    # recipe = Recipe.find(params[:id])
-    # recipe.update(recipe_params)
-    # redirect_to recipe_path(recipe.id)
   end
 
   def destroy
-    # binding.pry
     recipe = Recipe.find(params[:id])
     recipe.destroy
     redirect_to root_path
-
   end
 
+  
   def search
     @recipe_simple = Recipe.search(params[:keyword])
     # @q = Item.ransack(params[:q])
@@ -100,19 +82,8 @@ class RecipesController < ApplicationController
          .merge(user_id: current_user.id)
   end
 
-  # def calculation_params
-  #   params.require(:calculation).permit(:calc).merge(user_id: current_user.id)
-  # end
-
-
-  # def set_ing
-  #   @a = Recipe.find(params[:recipe_id])
-  # end
-
   def movie_to_index
     redirect_to action: :index  unless user_signed_in?
   end
-
-
 
 end
