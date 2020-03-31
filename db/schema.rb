@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_26_074728) do
+ActiveRecord::Schema.define(version: 2020_03_31_050618) do
 
   create_table "calculations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2020_03_26_074728) do
     t.index ["title"], name: "index_recipes_on_title"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -86,4 +95,5 @@ ActiveRecord::Schema.define(version: 2020_03_26_074728) do
   add_foreign_key "likes", "recipes"
   add_foreign_key "likes", "users"
   add_foreign_key "recipelists", "recipes"
+  add_foreign_key "sns_credentials", "users"
 end
