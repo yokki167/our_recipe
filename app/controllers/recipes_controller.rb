@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :movie_to_index, except: [:index, :show, :search, :category]
 
   def index
-    @recipes = Recipe.includes(:user).order("created_at DESC")
+    @recipes = Recipe.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
