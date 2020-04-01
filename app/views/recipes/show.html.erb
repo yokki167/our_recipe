@@ -71,8 +71,8 @@
           <%= @recipe.serving %> 人前
         </div>
       </div>
-      <% @recipe.ingredients.each do |ingr| %>
-        <div class="middle--wrapper__left__ingre">
+      <% @recipe.ingredients.each_with_index do |ingr, i| %>
+        <div class="middle--wrapper__left__ingre", id="<%=i%>">
           <div class="middle--wrapper__left__ingre__iname">
             <%= ingr.iname %>
           </div>
