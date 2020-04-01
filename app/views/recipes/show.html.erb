@@ -31,10 +31,11 @@
         </div>
       </div>
 
-
-      <div class="top--wrapper__left__oneword">
-        <%= @recipe.oneword %>
-      </div>
+      <% if @recipe.oneword.present? %>
+        <div class="top--wrapper__left__oneword">
+          <%= @recipe.oneword %>
+        </div>
+      <% end %>
 
       <div id="likes_buttons_<%= @recipe.id %>">
          <%= render partial: 'likes/like', locals: { recipe: @recipe} %>
