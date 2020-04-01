@@ -111,20 +111,23 @@
               <%= image_tag recipelist.image.to_s, class: "photolist" %>
             </div>
           <% end %>
+          <% if recipelist.text.present? %>
           <div class="bottom--wrapper__wrapper__list__text">
             <%= recipelist.text %>
           </div>
+          <% end %>
         </div>
   <% end %>
     </div>
-    <div class="point1">
-      point!!
-    </div>
-    <div class="point">
-      <div class="point--main">
-        <%= @recipe.point %>
-        
+    <% if @recipe.point.present? %>
+      <div class="point1">
+        point!!
+      </div>
+      <div class="point">
+        <div class="point--main">
+          <%= @recipe.point %>
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
 </div>
