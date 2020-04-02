@@ -41,6 +41,7 @@
         <div class="actions">
           <%= f.submit "Sign up" , class: "submit-btn"%>
         </div>
+        <%= link_to 'Googleで新規登録', user_google_oauth2_omniauth_authorize_path, method: :post %>
       <% end %>
     </div>
     <div class="devise-links">
