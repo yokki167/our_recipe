@@ -28,10 +28,10 @@
       <div class="actions">
         <%= f.submit "Log in", class: "submit-btn" %>
       </div>
+      <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post %>
     <% end %>
     <div class="devise-links">
       <%= render "devise/shared/links" %>
     </div>
   </div>  
-
 </div>
