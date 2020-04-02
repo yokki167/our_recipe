@@ -9,32 +9,18 @@
     padding-right: 20px;
     font-size: 1.2em;
     width: 10%;
-    // background-color: #d89f36;
-
-
-
-  //   position: relative;
-  // display: inline-block;
-  // padding: 0.25em 0.5em;
-  // text-decoration: none;
-  // color: #FFF;
-  // background: #fd9535;/*色*/
-  // border-radius: 4px;/*角の丸み*/
-  // box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  // font-weight: bold;
-  // border: solid 2px #d27d00;/*線色*/
-  
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 8px 10px 5px 10px;
-  text-decoration: none;
-  color: rgb(61, 42, 9);
-  background: #f8b13e;
-  border-bottom: solid 4px rgb(192, 123, 5);
-  border-radius: 15px 15px 0 0;
-  transition: .4s;
-  text-align: center;
+    font-size: 1vw;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 10px 5px 10px;
+    text-decoration: none;
+    color: rgb(61, 42, 9);
+    background: #f8b13e;
+    border-bottom: solid 4px rgb(192, 123, 5);
+    border-radius: 15px 15px 0 0;
+    transition: .4s;
+    text-align: center;
 }
   .recipeManage__delete{
     text-decoration: none;
@@ -43,8 +29,7 @@
     font-size: 1.2em;
     background-color:#55340c;
     width: 10%;
-
-
+    font-size: 1vw;
     position: relative;
     display: inline-block;
     font-weight: bold;
@@ -64,7 +49,7 @@
 
 .show--wrapper{
   width: 60%;
-  height: 100%;
+  // height: 100%;
   margin: 0 auto;
   background-color:white;
   border: yellow;
@@ -164,6 +149,7 @@
         border-color:rgb(255, 230, 0);
         text-decoration: none;
         width: 125px;
+        text-align: center;
 
         // height: 50px;
         // background: url(http://nelog.jp/wp-content/uploads/2016/03/star_animation.png) no-repeat;
@@ -253,6 +239,8 @@
         display: flex;
         justify-content: space-between;
         width: 80%;
+        font-size: 1vw;
+
         
         &__iname{
           font-size: 19px;
@@ -270,14 +258,43 @@
         border-bottom: solid 3px #f5d6a8;
         padding-top: 9px;
         padding-bottom: 11px;
+        font-size: 1vw;
         // display: inline-block;
         // display: flex;
         // justify-content: space-between;
         #keyword{
-          width: 20%;
+          width: 15%;
+          border-radius: 3px;
+          border: solid 2px #f6b68c;
+
           // display: flex;
           // justify-content: space-between;
   
+        }
+        #keyword:focus{
+          outline: 0;
+
+        }
+        #button {
+          display: inline-block;
+          text-decoration: none;
+          color: #f6b68c;
+          border: solid 2px #f6b68c;
+          border-radius: 3px;
+          transition: .4s;
+          // width: 40%;
+        }
+        
+        #button:hover {
+          background: #f6b68c;
+          color: white;
+        }
+        #button:focus{
+          outline: 0;
+        }
+        .note{
+          padding-left: 16px;
+          font-size: 0.7vw;
         }
         
       }

@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      recipe: レシピ
+    attributes:
+      recipe:
+        title: タイトル
+        time: 食べるまでの時間
+        image: 完成した料理の写真
+        serving: 何人前
+        worktime: 調理時間

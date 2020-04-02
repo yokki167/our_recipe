@@ -31,10 +31,11 @@
         </div>
       </div>
 
-
-      <div class="top--wrapper__left__oneword">
-        <%= @recipe.oneword %>
-      </div>
+      <% if @recipe.oneword.present? %>
+        <div class="top--wrapper__left__oneword">
+          <%= @recipe.oneword %>
+        </div>
+      <% end %>
 
       <div id="likes_buttons_<%= @recipe.id %>">
          <%= render partial: 'likes/like', locals: { recipe: @recipe} %>
@@ -71,8 +72,8 @@
           <%= @recipe.serving %> 人前
         </div>
       </div>
-      <% @recipe.ingredients.each do |ingr| %>
-        <div class="middle--wrapper__left__ingre">
+      <% @recipe.ingredients.each_with_index do |ingr, i| %>
+        <div class="middle--wrapper__left__ingre", id="<%=i%>">
           <div class="middle--wrapper__left__ingre__iname">
             <%= ingr.iname %>
           </div>
@@ -89,7 +90,7 @@
             <input id="keyword" type= "number">
           <%# </div> %>
           <%# <div class="middle--wrapper__right__top__btn"> %>
-            <button id = "button">人前を表示</button>※おおよそです
+            <button id = "button">人前を表示</button><span class= "note" >※おおよそです</span>
           <%# </div> %>
         </form>
       </div>
@@ -111,20 +112,23 @@
               <%= image_tag recipelist.image.to_s, class: "photolist" %>
             </div>
           <% end %>
+          <% if recipelist.text.present? %>
           <div class="bottom--wrapper__wrapper__list__text">
             <%= recipelist.text %>
           </div>
+          <% end %>
         </div>
   <% end %>
     </div>
-    <div class="point1">
-      point!!
-    </div>
-    <div class="point">
-      <div class="point--main">
-        <%= @recipe.point %>
-        
+    <% if @recipe.point.present? %>
+      <div class="point1">
+        point!!
+      </div>
+      <div class="point">
+        <div class="point--main">
+          <%= @recipe.point %>
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
 </div>

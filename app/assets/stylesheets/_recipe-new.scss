@@ -4,7 +4,6 @@
   margin: 0 auto;
   background-color: white;
   // overflow: scroll;
-
   a{
     color: black;
     text-decoration: none;
@@ -62,7 +61,11 @@
 
   .form{
     padding: 0 20px;
+    ul{
+      color: red;
+    }
   }
+  
 
   &__recipeinfo{
     // border: solid 3px #f5d6a8;

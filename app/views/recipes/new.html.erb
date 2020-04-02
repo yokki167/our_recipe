@@ -10,19 +10,19 @@
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
       <div class="heading-title">料理のタイトル</div>
-      <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+      <%= form.text_field :title, placeholder: :タイトル, class: :form__title ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__serve">
       <div class="heading-serve">何人前</div>
-      <%= form.number_field :serving, placeholder: :人前, class: :form__serving %>
+      <%= form.number_field :serving, placeholder: :人前, class: :form__serving ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__ByEatTime">
       <div class="heading-ByEatTime">食べるまでの時間(分)</div>
-      <%= form.number_field :time, placeholder: :食べるまでの時間, class: :form__time %>
+      <%= form.number_field :time, placeholder: :食べるまでの時間, class: :form__time ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__WorkTime">
       <div class="heading-WorkTime">調理時間(分)</div>
-      <%= form.number_field :worktime, placeholder: :調理時間, class: :form__time %>
+      <%= form.number_field :worktime, placeholder: :調理時間, class: :form__time ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__oneword">
       <div class="heading-oneword">レシピについて一言</div>
