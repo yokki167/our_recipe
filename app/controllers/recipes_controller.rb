@@ -1,10 +1,10 @@
 class RecipesController < ApplicationController
 
   # before_action :set_ing only: :show
-  before_action :movie_to_index, except: [:index, :show, :search, :category]
+  before_action :movie_to_index, except: [:index, :show, :search, :category, :detail_search]
 
   def index
-    @recipes = Recipe.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    @recipes = Recipe.includes(:user).order("created_at DESC").page(params[:page]).per(20)
   end
 
   def new
@@ -75,7 +75,7 @@ class RecipesController < ApplicationController
 
   def detail_search
     @search_params = recipe_search_params
-    @recipes = Recipe.search(@search_params).order("created_at DESC")
+    @recipes = Recipe.search(@search_params).order("created_at DESC").page(params[:page]).per(20)
   end
 
   private
