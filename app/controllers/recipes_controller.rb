@@ -73,6 +73,11 @@ class RecipesController < ApplicationController
     @recipes<<@recipe
   end
 
+  def detail_search
+    @search_params = recipe_search_params
+    @recipes = Recipe.search(@search_params).order("created_at DESC")
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(
@@ -80,6 +85,10 @@ class RecipesController < ApplicationController
          recipelists_attributes: [:id, :text, :image, :recipe_id, :_destroy],
          ingredients_attributes:[:id, :iname, :amount, :recipe_id, :_destroy])
          .merge(user_id: current_user.id)
+  end
+
+  def recipe_search_params
+    params.fetch(:search, {}).permit(:title, :time_from, :time_to)
   end
 
   def movie_to_index

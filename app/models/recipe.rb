@@ -46,4 +46,17 @@ class Recipe < ApplicationRecord
     end
   end
 
+
+  scope :search, -> (search_params) do
+    return if search_params.blank?
+    recipe_title_like(search_params[:title])
+    .time_from(search_params[:time_from])
+    .time_to(search_params[:time_to])
+
+    end
+
+    scope :recipe_title_like, -> (title) { where('title LIKE ?', "%#{title}%") if title.present? }
+    scope :time_from, -> (from) { where('? <= time', from) if from.present? }
+    scope :time_to, -> (to) { where('time <= ?', to) if to.present? }
+
 end
