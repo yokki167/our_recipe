@@ -1,0 +1,10 @@
+<%= form_with(scope: :search, url: detail_search_recipes_path, method: :get, local: true) do |f| %>
+  <%= f.text_field :title, value: @search_params[:title] %>
+  <%= f.number_field :time_from, value: @search_params[:time_from] %> ~ <%= f.number_field :time_to, value: @search_params[:time__to] %>
+  <%= f.submit '検索する' %>
+<% end %>
+
+
+<% @recipes.each do |recipe|%>
+<%= recipe.title %>
+<% end %>
