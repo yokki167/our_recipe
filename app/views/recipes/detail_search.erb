@@ -1,10 +1,68 @@
-<%= form_with(scope: :search, url: detail_search_recipes_path, method: :get, local: true) do |f| %>
-  <%= f.text_field :title, value: @search_params[:title] %>
-  <%= f.number_field :time_from, value: @search_params[:time_from] %> ~ <%= f.number_field :time_to, value: @search_params[:time__to] %>
-  <%= f.submit '検索する' %>
-<% end %>
+<header class="header">
+  <%= render 'header'%>
+</header>
 
 
-<% @recipes.each do |recipe|%>
-<%= recipe.title %>
-<% end %>
+<div class="detail-search">
+  <div class="search-form">
+    <div class="search-name">詳細検索</div>
+    <%= form_with(scope: :search, url: detail_search_recipes_path, method: :get, local: true) do |f| %>
+      <div class="field">
+        <div class="form_title">レシピ名を検索</div>
+        <%= f.text_field :title, value: @search_params[:title] %>
+      </div>
+      <div class="field">
+        <div class="form_time">食べるまでの時間を検索</div>
+        <%= f.number_field :time_from, value: @search_params[:time_from] %><span>(分) </span><span>~</span> <%= f.number_field :time_to, value: @search_params[:time__to] %>(分)
+      </div>
+      <div class="submit">
+        <%= f.submit '検索する' , class: "submit-btn"  %>
+      </div>
+    <% end %>
+    </div>
+
+  <div class="detail-search--wrapper">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe--wrapper">
+        <div class="recipe--wrapper__photo">
+          <a href="/recipes/<%= recipe.id%>">
+            <%= image_tag recipe.image.to_s, class: "photosize" %>
+          </a>
+            <div class="mask">
+              <% if recipe.dish%>
+                <div class="caption1"><%= recipe.dish.name %></div>
+              <% end %>
+              <% if recipe.mainmaterial%>
+                <div class="caption2"><%= recipe.mainmaterial.name %></div>
+              <% end%>
+              <% if recipe.eattime%>
+                <div class="caption3"><%= recipe.eattime.name %></div>
+              <% end%>
+            </div>
+        </div>
+        <div class="recipe--wrapper__recipe">
+          <div class="recipe--wrapper__recipe__name">
+            <div class="recipe--wrapper__recipe__name__recipename">
+              <%= link_to recipe.title, recipe_path(recipe.id), class: "title-deco" %>
+            </div>
+            <div class="recipe--wrapper__recipe__name__nickname">
+              by:<%= link_to recipe.user.nickname, user_path(recipe.user), class: "nickname-deco" %>
+            </div>
+          </div>
+          <div class="recipe--wrapper__recipe__oneword">
+            <%= recipe.oneword%>
+          </div>
+          <div class="recipe--wrapper__recipe__bottom">
+            <div class="recipe--wrapper__recipe__bottom__like">
+              いいねの数 : <%= recipe.liked_users.count %>
+            </div>
+            <div class="recipe--wrapper__recipe__bottom__time">
+              食べるまでの時間 : <%= recipe.time %>分
+            </div>
+          </div>
+        </div>
+      </div>
+        <% end %>
+      <%= paginate(@recipes) %>
+    </div>
+</div>
