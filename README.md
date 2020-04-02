@@ -19,30 +19,81 @@
 
 
 ## 制作背景
+私は料理を作るとき様々なレシピサイトを見るが、とても使いやすい機能がたくさんあり助かっています。その反面、この機能があれば便利だと思ったり、少し料理を作る際にわかりにくい場合があり
 
 
 
 
+## usersテーブル
+|Column|Type|Option|
+|-------|-----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- has_many :recipes
+- has_many :likes
+- has_many :liked_recipes
 
-Things you may want to cover:
+## recipesテーブル
+|Column|Type|Option|
+|-------|-----|-------|
+|title|string|null: false|
+|image|string|null: false|
+|time|integer|null: false|
+|serving|integer|null: false|
+|user_id|integer||
+|point|string||
+|oneword|string||
+|worktime|integer|null: false|
+|dish_id|integer||
+|mainmaterial_id|||
+|eattime|integer||
 
-* Ruby version
+- belongs_to_active_hash :dish
+- belongs_to_active_hash :mainmaterial
+- belongs_to_active_hash :eattime
+- belongs_to :user
+- has_many :recipelists
+- has_many :ingredients
+- has_many :likes
+- has_many :liked_users, through: :likes
 
-* System dependencies
 
-* Configuration
+## ingredientsテーブル
+|Column|Type|Option|
+|-------|-----|-------|
+|iname|string||
+|amount|string||
+|recipe_id|bigint||
 
-* Database creation
+- belongs_to :recipe
 
-* Database initialization
+## recipelistsテーブル
+|Column|Type|Option|
+|-------|-----|-------|
+|text|string||
+|image|string||
+|recipe_id|bigint||
 
-* How to run the test suite
+- belongs_to :recipe
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## likesテーブル
+|Column|Type|Option|
+|-------|-----|-------|
+|user_id|bigint||
+|recipe_id|bigint||
 
-* ...
+- belongs_to :user
+- belongs_to :recipe
+
+
+## sns_credentialsテーブル
+|Column|Type|Option|
+|-------|-----|-------|
+|provider|||
+||||
+||||
+
+
