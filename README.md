@@ -97,7 +97,6 @@
 |user_id|integer||
 |point|string||
 |oneword|string||
-|worktime|integer|null: false|
 |dish_id|integer||
 |mainmaterial_id|||
 |eattime|integer||
