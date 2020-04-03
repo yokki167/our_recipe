@@ -22,9 +22,7 @@ class Recipe < ApplicationRecord
   validates :title, :time, presence: true
   validates :image, presence: true
   validates :serving, presence: true
-  validates :worktime, presence: true
   validates :serving, numericality: { only_integer: true }
-  validates :worktime, numericality: { only_integer: true }
   validates :time, numericality: { only_integer: true }
   validates :oneword, length: { maximum: 55 }
 
