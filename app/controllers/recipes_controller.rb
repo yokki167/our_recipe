@@ -49,8 +49,8 @@ class RecipesController < ApplicationController
   end
 
   
-  def search
-    @recipe_simple = Recipe.search(params[:keyword])
+  def simplesearch
+    @recipe_simple = Recipe.simplesearch(params[:keyword])
     # @q = Item.ransack(params[:q])
     # @search_item = Item.ransack(params[:q]) 
     # @items = @search_item.result

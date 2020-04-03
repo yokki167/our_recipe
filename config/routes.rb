@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :recipes, expect: :index do
     resources :likes, only: [:create, :destroy]
     collection do
-      get 'search'
+      get 'simplesearch'
       get 'detail_search'
     end
     member do
