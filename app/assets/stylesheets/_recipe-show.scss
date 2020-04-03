@@ -87,18 +87,13 @@
 
 
      .postAuthor{
-        font-size: 1.5vw;
+        font-size: 1.2vw;
 
        .nickname-deco{
          text-decoration: none;
          color: black;
        }
      }
-
-     &__time{
-      display: flex;
-      justify-content: space-around;
-    }
 
      .top--wrapper__left__oneword{
         position: relative;
@@ -197,9 +192,46 @@
         height:300px;
        }
      }
-     &__created{
-      float: right;
-     }
+     &__bottom{
+      &__created{
+      }
+      &__category{
+        .caption1{
+          display: inline-block;
+          padding: 0.1em .8em;
+          border-radius: 15px;
+          text-decoration: none;
+          color: #000000;
+          background: #aefabe;
+          font-size: 0.9em;
+          height: 50%;
+          bottom: 0;
+
+        }
+        .caption2{
+          display: inline-block;
+          padding: 0.1em .8em;
+          border-radius: 15px;
+          text-decoration: none;
+          color: #000000;
+          background: #faa4be;
+          font-size: 0.9em;
+          height: 50%;
+
+        }
+        .caption3{
+          display: inline-block;
+          padding: 0.1em .8em;
+          border-radius: 15px;
+          text-decoration: none;
+          color: #000000;
+          background: #fcc47c;
+          font-size: 0.9em;
+          height: 50%;
+
+        }
+      }
+    }
    } 
   }
   .middle--wrapper{
@@ -329,12 +361,14 @@
       width: 13%;
     }
     &__wrapper{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
       padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
       &__list{
         width: 30%;
+        margin-left: 20px;
+
         &__count{
           font-size: 20px;
           padding-bottom: 10px;

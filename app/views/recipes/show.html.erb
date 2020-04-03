@@ -22,11 +22,6 @@
         by:<%= link_to @recipe.user.nickname, user_path(@recipe.user), class: "nickname-deco" %>
       </div>
 
-      <div class="top--wrapper__left__time">
-        <div class="top--wrapper__left__time__byEatTime">
-          食べるまで:<%= @recipe.time %>分
-        </div>
-      </div>
 
       <% if @recipe.oneword.present? %>
         <div class="top--wrapper__left__oneword">
@@ -48,15 +43,20 @@
         </a>
       </div>
         <div class="top--wrapper__right__bottom">
-        <div class="top--wrapper__right__bottom__created">
-          更新日<%= @recipe.updated_at.strftime("%Y-%m-%d %H:%M") %>
+          <div class="top--wrapper__right__bottom__created">
+            更新日<%= @recipe.updated_at.strftime("%Y-%m-%d %H:%M") %>
+          </div>
+          <div class="top--wrapper__right__bottom__category">
+            <% if @recipe.dish.present?%><div class="caption1"><%= @recipe.dish.name %></div><% end %>
+            <% if @recipe.eattime.present? %><div class="caption2"><%= @recipe.eattime.name%></div><% end %>
+            <% if @recipe.mainmaterial.present? %><div class="caption3"><%= @recipe.mainmaterial.name%></div><% end %>
+          </div>
+          <div class="top--wrapper__right__bottom__time">
+            <div class="top--wrapper__right__bottom__byEatTime">
+              所要時間:<%= @recipe.time %>分
+            </div>
+          </div>
         </div>
-        <div class="top--wrapper__right__bottom__category">
-          カテゴリ: <% if @recipe.dish.present?%><%= @recipe.dish.name %><% end %>
-          <% if @recipe.eattime.present? %>,<%= @recipe.eattime.name%><% end %>
-           <% if @recipe.mainmaterial.present? %>,<%= @recipe.mainmaterial.name%><% end %>
-        </div>
-      </div>
     </div>
   </div>
   <div class="middle--wrapper">
