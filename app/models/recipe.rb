@@ -30,14 +30,14 @@ class Recipe < ApplicationRecord
 
 
 
-  def self.search(search)
-    if search
-      a=Ingredient.where('iname LIKE(?)', "%#{search}%")
+  def self.simplesearch(simplesearch)
+    if simplesearch
+      a=Ingredient.where('iname LIKE(?)', "%#{simplesearch}%")
       array=[]
       a.each do |f|
         array<< f.recipe_id 
       end
-      Recipe.where(id: array).or(Recipe.where('title LIKE(?)', "%#{search}%"))
+      Recipe.where(id: array).or(Recipe.where('title LIKE(?)', "%#{simplesearch}%"))
 
     else
       Recipe.all
