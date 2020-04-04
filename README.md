@@ -12,9 +12,6 @@
 ### トップページ
 [![Image from Gyazo](https://i.gyazo.com/b9af2b0770e96c329cfa01310cb1a56a.gif)](https://gyazo.com/b9af2b0770e96c329cfa01310cb1a56a)
 
-
-[![Image from Gyazo](https://i.gyazo.com/b9af2b0770e96c329cfa01310cb1a56a.gif)](https://gyazo.com/b9af2b0770e96c329cfa01310cb1a56a)
-
 ### レシピ投稿ページ
 
 ### レシピの詳細ページ
