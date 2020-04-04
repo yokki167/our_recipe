@@ -6,6 +6,7 @@
 
 ## テストアカウント
 ||テストアカウント|
+|----|----|
 |email|guest@guest.com|
 |password|000000|
 
