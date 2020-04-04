@@ -18,6 +18,8 @@
 ### レシピ投稿ページ
 
 ### レシピの詳細ページ
+![a1c11411af37e8d670e18a65478a8832](https://user-images.githubusercontent.com/60569769/78419647-a6885500-7682-11ea-9fdc-d03e2b0ed1fe.gif)
+
 
 
 ## アプリ概要
