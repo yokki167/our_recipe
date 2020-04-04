@@ -4,6 +4,11 @@
 ## 🌐 App URL
 ### **https://www.ourrecipe.tech/** 
 
+## テストアカウント
+||テストアカウント|
+|email|guest@guest.com|
+|password|000000|
+
 
 ## インストール
 `$ git clone https://github.com/yokki167/our_recipe.git`
