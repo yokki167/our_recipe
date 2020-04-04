@@ -10,12 +10,10 @@
 
 ## デモ
 ### トップページ
-![Image from Gyazo](https://i.gyazo.com/b9af2b0770e96c329cfa01310cb1a56a.gif)
-
-
 ![b9af2b0770e96c329cfa01310cb1a56a](https://user-images.githubusercontent.com/60569769/78419513-7be9cc80-7681-11ea-9972-5e5233864910.gif)
 
 ### レシピ投稿ページ
+![4a240de6cbf282a5ac061b8b971b20ca](https://user-images.githubusercontent.com/60569769/78419981-092f2000-7686-11ea-9aa4-df86992b057d.gif)
 
 ### レシピの詳細ページ
 ![a1c11411af37e8d670e18a65478a8832](https://user-images.githubusercontent.com/60569769/78419647-a6885500-7682-11ea-9fdc-d03e2b0ed1fe.gif)
