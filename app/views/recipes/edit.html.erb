@@ -10,36 +10,40 @@
 
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
-      <div class="heading-title">料理のタイトル</div>
+      <div class="heading-title">料理のタイトル (44字以内)(必須)</div>
       <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
     </div>
     <div class="new--wrapper__recipeinfo__serve">
-      <div class="heading-serve">何人前</div>
+      <div class="heading-serve">何人前(必須)</div>
       <%= form.number_field :serving, placeholder: :人前, class: :form__serving %>
     </div>
     <div class="new--wrapper__recipeinfo__ByEatTime">
-      <div class="heading-ByEatTime">所要時間（下処理等含む）(分)</div>
+      <div class="heading-ByEatTime">所要時間（下処理等含む）(分)(必須)</div>
       <%= form.number_field :time, placeholder: :所要時間（下処理等含む）, class: :form__time %>
     </div>
     <div class="new--wrapper__recipeinfo__oneword">
-      <div class="heading-oneword">レシピについて一言</div>
+      <div class="heading-oneword">レシピについて一言 (55字以内)</div>
       <%= form.text_area :oneword, placeholder: :一言, class: :form__oneword %>
     </div>
     <div class="new--wrapper__recipeinfo__point">
       <div class="heading-point">レシピを作る上でのポイント</div>
       <%= form.text_area :point, placeholder: :"Point!", class: :form__point %>
     </div>
-    <div class="new--wrapper__recipeinfo__category">
+    <div class ="new--wrapper__recipeinfo__form">
+    <div class="heading-tag"> タグの選択</div>
+    <div class="new--wrapper__recipeinfo__form__tag">
+    <div class="dish-tag">主食・主菜などから選んでください</div>
       <%= form.collection_select :dish_id, Dish.all, :id, :name, prompt: "---" %>
+    <div class="mainmaterial">メインの食材から選んでください</div>
       <%= form.collection_select :mainmaterial_id, Mainmaterial.all, :id, :name, prompt: "---" %>
+    <div class="eattime">朝食・昼食などから選んでください</div>
       <%= form.collection_select :eattime_id, Eattime.all, :id, :name, prompt: "---" %>
+    </div>
     </div>
 
     <div class="new--wrapper__recipeinfo__image">
-      <div class="heading-image">完成した料理の写真を選択してください</div>
+      <div class="heading-image">完成した料理の写真を選択してください(必須)</div>
       <%= form.file_field :image %>
-      <div id="result"></div>
-
     </div>
   </div>
 
@@ -50,8 +54,10 @@
     <% end%>
     <div class="links">
       <label class="icon-label">
-        <i class="fas fa-plus"></i>
-        <%= link_to_add_association "「作り方」欄を一つ増やします", form, :recipelists %>
+        <%= link_to_add_association form, :recipelists do %>
+          <i class="fas fa-plus"></i>
+          作り方を増やす
+        <% end %>
       </label> 
     </div>
   </div>
@@ -63,8 +69,10 @@
     <% end%>
     <div class="links">
       <label class="icon-label">
-          <i class="fas fa-plus"></i>
-          <%= link_to_add_association "上の材料を一つ増やします", form, :ingredients %>
+          <%= link_to_add_association form, :ingredients do %>
+            <i class="fas fa-plus"></i>
+            材料を増やす
+          <% end%>
       </label>
     </div>
   </div>
