@@ -9,19 +9,19 @@
     <%= render 'layouts/error_messages', model: form.object %>
   <div class="new--wrapper__recipeinfo">
     <div class="new--wrapper__recipeinfo__title">
-      <div class="heading-title">料理のタイトル</div>
+      <div class="heading-title">料理のタイトル (44字以内)(必須)</div>
       <%= form.text_field :title, placeholder: :タイトル, class: :form__title ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__serve">
-      <div class="heading-serve">何人前</div>
+      <div class="heading-serve">何人前(必須)</div>
       <%= form.number_field :serving, placeholder: :人前, class: :form__serving ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__ByEatTime">
-      <div class="heading-ByEatTime">所要時間（下処理等含む）(分)</div>
+      <div class="heading-ByEatTime">所要時間（下処理等含む）(分)(必須)</div>
       <%= form.number_field :time, placeholder: :所要時間（下処理等含む）, class: :form__time ,required: true %>
     </div>
     <div class="new--wrapper__recipeinfo__oneword">
-      <div class="heading-oneword">レシピについて一言</div>
+      <div class="heading-oneword">レシピについて一言 (55字以内)</div>
       <%= form.text_area :oneword, placeholder: :一言, class: :form__oneword %>
     </div>
     <div class="new--wrapper__recipeinfo__point">
@@ -48,7 +48,7 @@
       <%#= form.select %>
     <%# </div> %>
     <div class="new--wrapper__recipeinfo__image">
-      <div class="heading-image">完成した料理の写真を選択してください</div>
+      <div class="heading-image">完成した料理の写真を選択してください(必須)</div>
       <%= form.file_field :image %>
     </div>
   </div>
@@ -60,7 +60,6 @@
     <%= form.fields_for :recipelists do |recipelist| %>
       <%= render "recipelist_fields", f: recipelist %>
             <%# <div id="result_recipelist_add"></div> %>
-
     <% end%>
     <div class="links">
       <label class="icon-label">
