@@ -25,6 +25,7 @@ class Recipe < ApplicationRecord
   validates :serving, numericality: { only_integer: true }
   validates :time, numericality: { only_integer: true }
   validates :oneword, length: { maximum: 55 }
+  validates :title, length: { maximum: 40 }
 
 
 
