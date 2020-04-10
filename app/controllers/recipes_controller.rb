@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
-
-  # before_action :set_ing only: :show
   before_action :movie_to_index, except: [:index, :show, :search, :category, :detail_search, :simplesearch]
+  before_action :recipe_find, except: [:index, :new, :create, :simplesearch, :category, :detail_search]
 
   def index
     @recipes = Recipe.includes(:user).order("created_at DESC").page(params[:page]).per(20)
@@ -23,18 +22,14 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
     @like = Like.new
     a = @recipe.ingredients
   end
 
-  def edit
-    @recipe = Recipe.find(params[:id])
-    
+  def edit    
   end
 
   def update
-    @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
       redirect_to root_path
     else
@@ -43,17 +38,13 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    recipe = Recipe.find(params[:id])
-    recipe.destroy
+    @recipe.destroy
     redirect_to root_path
   end
 
   
   def simplesearch
     @recipe_simple = Recipe.simplesearch(params[:keyword])
-    # @q = Item.ransack(params[:q])
-    # @search_item = Item.ransack(params[:q]) 
-    # @items = @search_item.result
   end
 
   def category
@@ -90,5 +81,9 @@ class RecipesController < ApplicationController
   def movie_to_index
     redirect_to action: :index  unless user_signed_in?
   end
+
+  def recipe_find
+    @recipe = Recipe.find(params[:id])
+  end 
 
 end
